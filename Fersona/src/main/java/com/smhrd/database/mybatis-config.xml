@@ -12,9 +12,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <dataSource type="POOLED">
                 <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
                 <!-- db 계정 받으면 수정 필수 -->
-                <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-                <property name="username" value="hr"/>
-                <property name="password" value="hr"/>
+                <property name="url" value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"/>
+                <property name="username" value="final_ai3"/>
+                <property name="password" value="smhrd3"/>
             </dataSource>
         </environment>
     </environments>
