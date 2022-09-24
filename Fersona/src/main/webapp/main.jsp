@@ -18,8 +18,8 @@
     <body>
         <!--navbar-->
         <%@include file="nav.jsp"%>
-        
         <!--navbar 끝-->
+        
         <!-- Header-->
         <header class="bg-secondary py-5 ">
             <div class="container px-lg-5">
@@ -27,8 +27,8 @@
                     <div class="m-4 m-lg-5">
                         <h3>쉽고,빠르고,간편한,스마트 국민제보</h3>
                             <span><a href="face.jsp"><image class="main"></image></a></span>
-                            <span><a href="information.jsp"><image class="main"></image></a></span>
-                            <span><a href="tip.jsp"><image class="main"></image></a></span>
+                            <span><a href="faceInfoList.jsp"><image class="main"></image></a></span>
+                            <span><a href="reportList.jsp"><image class="main"></image></a></span>
                             
                         
                     </div>
