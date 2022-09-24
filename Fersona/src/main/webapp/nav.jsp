@@ -24,11 +24,11 @@
                  
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="face.html">몽타주 생성 </a></li>
-                        <li class="nav-item"><a class="nav-link" href="information">수배자 정보</a></li>
-                        <li class="nav-item"><a class="nav-link" href="tip">제보/신고조회</a></li>
-                        <li class="nav-item"><a class="nav-link" href="personal">개인정보 수정</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sign out">로그아웃</a></li>
+                        <li class="nav-item"><a class="nav-link" href="face.jsp">몽타주 생성 </a></li>
+                        <li class="nav-item"><a class="nav-link" href="faceInfoList.jsp">수배자 정보</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reportList.jps">제보/신고조회</a></li>
+                        <li class="nav-item"><a class="nav-link" href="update.jsp">개인정보 수정</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.jsp">로그아웃</a></li>
                     </ul>
                 </div>
             </div>
