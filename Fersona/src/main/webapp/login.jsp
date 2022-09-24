@@ -5,71 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>CATCH FACE</title>
-
-<style>
-body {
-	background-color: #293241;
-	background-repeat: no-repeat;
-}
-
-.container {
-/* 	
-	flex-direction: column;
-	width: 500px;
-	margin: 10vh auto;
-	background: transparent; */
-	align-items: center;
-	text-align: center;
-	
-	/* 반응형으로 가운데정렬 */
-	position: absolute;
-	left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.logo {
-	width: 180px;
-	margin-bottom: 50px;
-}
-
-input {
-	width: 250px;
-	height: 40px;
-	outline: none;
-	border: none;
-	padding-left: 10px;
-	margin-bottom: 4px;
-	color: white;
-	font-size: 15px;
-}
-
-button[type="submit"] {
-	width: 260px;
-	height: 42px;
-	font-size: 18px;
-	background: #EE964B;
-	margin-top: 8px;
-	border: none;
-	color: white;
-	border: none;
-}
-
-p {
-	text-align: right;
-	font-size: 13px;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-}
-
-a:hover {
-	text-decoration: none;
-	color: white;
-}
-</style>
+<link href="css/login.css" rel="stylesheet">
 
 </head>
 <body>
@@ -98,6 +34,7 @@ a:hover {
 		</div>
 	</form>
 </div>
+
 
 </body>
 </html>
