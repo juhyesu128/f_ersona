@@ -90,7 +90,7 @@
 			<%--
 			for (Board b : list) {
 			--%>
-			<tr class="tableHt" onClick ="window.open('reportContent.jsp')" style="cursor:pointer;">
+			<tr class="tableHt" onClick ="location.href='reportContent.jsp'" style="cursor:pointer;">
 				<td>1</td>
 				<td>광주광역시 북구 무슨동</td>
 				<td>사기</td>
