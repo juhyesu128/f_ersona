@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
-                <a href="index.html"><img src="./imgs/logo.jpg" width="200"></a>
+                <a href="main.jsp"><img src="./imgs/logo.jpg" width="200"></a>
                 <!-- 줄였을때 햄버거 -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                  
