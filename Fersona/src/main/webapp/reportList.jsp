@@ -90,14 +90,12 @@
 			<%--
 			for (Board b : list) {
 			--%>
-			<tr class="tableHt">
-				<a href="reportContent.jsp">
-					<td>1</td>
-					<td>광주광역시 북구 무슨동</td>
-					<td>사기</td>
-					<td>2022.08.01.</td>
-					<td>접수대기</td>
-				</a>
+			<tr class="tableHt" onClick ="window.open('reportContent.jsp')" style="cursor:pointer;">
+				<td>1</td>
+				<td>광주광역시 북구 무슨동</td>
+				<td>사기</td>
+				<td>2022.08.01.</td>
+				<td>접수대기</td>
 				<%-- <td><a href="boardView.jsp?num=<%=b.getNum()%>"><%=b.getName()%></a></td>
 				<td><%=b.getWriter()%></td>
 				<td><%=b.getViews()%></td> --%>
@@ -109,13 +107,13 @@
 
 		</table>
 
-<!-- 이전 다음 페이지 넘기기 pagination -->
+		<!-- 이전 다음 페이지 넘기기 pagination -->
 		<ul class="pagination">
 			<li><a href="#">◀</a></li>
 			<li class="current-page"><a href="#">1</a></li>
 			<li><a href="#">2</a></li>
 			<li><a href="#">3</a></li>
-			<li><a  href="#">▶</a></li>
+			<li><a href="#">▶</a></li>
 		</ul>
 	</div>
 
