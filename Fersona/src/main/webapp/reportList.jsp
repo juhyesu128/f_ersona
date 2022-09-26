@@ -69,12 +69,54 @@
 				<p class="search_text">신고내용</p>
 				<input class="search" type="text" placeholder="검색어를 입력해주세요"
 					name="rep_con">
-				<button class = "search_btn" type="submit" value="Searching">
+				<button class="search_btn" type="submit" value="Searching">
 					<img class="search_icon" src="./imgs/search.png">
 				</button>
 			</div>
-
 		</form>
+
+
+		<!-- 제보/신고 리스트 -->
+		<p id="totalLeft">총 00건이 검색되었습니다.</p>
+		<table class="table">
+			<tr id="th" class="tableHt">
+				<th>번호</th>
+				<th>발생지역</th>
+				<th>신고유형</th>
+				<th>등록일</th>
+				<th>진행현황</th>
+			</tr>
+
+			<%--
+			for (Board b : list) {
+			--%>
+			<tr class="tableHt">
+				<a href="reportContent.jsp">
+					<td>1</td>
+					<td>광주광역시 북구 무슨동</td>
+					<td>사기</td>
+					<td>2022.08.01.</td>
+					<td>접수대기</td>
+				</a>
+				<%-- <td><a href="boardView.jsp?num=<%=b.getNum()%>"><%=b.getName()%></a></td>
+				<td><%=b.getWriter()%></td>
+				<td><%=b.getViews()%></td> --%>
+			</tr>
+
+			<%--
+			}
+			--%>
+
+		</table>
+
+<!-- 이전 다음 페이지 넘기기 pagination -->
+		<ul class="pagination">
+			<li><a href="#">◀</a></li>
+			<li class="current-page"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a  href="#">▶</a></li>
+		</ul>
 	</div>
 
 	<!-- footer -->
