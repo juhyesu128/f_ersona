@@ -234,13 +234,6 @@ sup {
   top: -0.5em;
 }
 
-a {
-  color: #0d6efd;
-  text-decoration: underline;
-}
-a:hover {
-  color: #0a58ca;
-}
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
@@ -12202,34 +12195,140 @@ textarea.form-control-lg {
 .main{
   width: 200px;
   height: 200px;
+  
+
+}
+
+.m-4 {
+  margin: 1.5rem !important;
+}
+
+.main_li{
+  /*background:#293241;*/
+  border-radius: 10px;
+  margin: 10px;
+  
+
+}
+
+.main_headr_span{
+  display: inline-flex;
+  position: absolute;
+  
+  
+  
+
+}
+.main_headr{
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
 
 
 /* face */
 
 .face-text{  
-  margin-top: 10%;
-  margin-left: 12%;
-  width: 500px;
-  height: 500px;
+  margin-top: 50px;
+  width: 600px;
+  height: 600px;
+  padding: 2px;
   overflow: auto;
   resize: none;
 }
 .upload{
-  top: -150px;
-  left: 110px;
+  top: 600px;   
+  position: absolute;
+  
+ 
+}
+
+.face{
+  display: flex;
+  
+  
+}
+.face_bar{
+  margin: auto;
+  width: 1260px;
+}
+
+.resetbar{
+  display: flex;
+  justify-content:space-between;  
+}
+
+.face_image{
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+
+}
+.resetbar_btn{
+  display: inline-flex;
   position: relative;
+  width: auto;
+  padding: 10px; 
+  margin: 5px 5px 5px 0; 
+  font-weight: 600; 
+  text-align:center; 
+  /* line-height: 50px; */
+  color: #FFF; 
+  border-radius: 5px;
+  transition: all 0.2s ;
+  background: #ee964b;
+   
+} 
+
+a {/*a태그*/
+  color: #0e0e0e;
+  text-decoration: underline;
+  text-decoration-line: none;
 }
-.btn{
-  width: 20px;
+.current{
+  font-size: 20px;
+  width: 100%;
+  margin: auto;
+  background: #293241;
+  border-radius: 3px;
+  color: white;
+   
+}
+a:hover {
+  color: white;
+}
+/* wanted */
+.face_bar{
+  width: 1260px;
+}
+.face_image{
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  
 
 }
-.inquiry{
-
+.wanted{
+  display: flex;
+  justify-content: center
+   
 }
-.face-inquiry{
-  margin-top: 10%;
-  width: 500px;
-  height: 500px;
+.wanted_criminal{
+  display: flex;
+  justify-content: center;
+  list-style: none;   
+}
+
+.information>li{/*자손선택자*/
+  background-color: #EE964B;
+  list-style: none;
+  padding:2px;
+  color: white;
+  font-weight: 600;    
+}
+.information{
+  padding: 10px;
+  
   
 }
