@@ -5,7 +5,7 @@
 	flex-direction: column;
 	background: transparent; */
 	margin: 8.5vh auto;
-	width: 1200px;
+	width: 1100px;
 	align-items: center;
 	text-align: center;
 	/* 반응형으로 가운데정렬 */
@@ -35,7 +35,7 @@ td {
 }
 
 select {
-	width: 250px;
+	width: 220px;
 	height: 40px;
 	align-items: center;
 	padding-left: 8px;
@@ -66,14 +66,16 @@ tr {
 .search {
 	display: inline;
 	border: none;
-	width: 980px;
+	width: 880px;
 	height: 44px;
 }
 
 .search_btn {
 	position: absolute;
 	border: none;
-	top: 8px; right : 10px; background-color : #fff;
+	top: 8px;
+	right: 10px;
+	background-color: #fff;
 	text-align: right;
 	border: none;
 	background-color: #fff;
@@ -82,4 +84,99 @@ tr {
 
 .search_icon {
 	width: 25px;
+}
+
+#totalLeft {
+	font-size: 12px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: left;
+	margin-top: 30px;
+}
+
+.table {
+	font-size: 14px;
+	width: 80%;
+	border: 1 0px solid #a5a5a5;
+}
+
+.tableHt {
+	height: 40px;
+}
+
+#th {
+	background-color: #FDFAE8;
+}
+
+/* Pagination */
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	border: 1px solid #e1e4e8;
+	width: 160px;
+	height: 32px;
+	margin: 0 auto;
+}
+
+.pagination a, .pagination button {
+	height: 32px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 9px 12px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #293241;
+	text-decoration: none;
+}
+
+.pagination>a:first-child {
+	border-radius: 3px 0 0 3px;
+}
+
+.pagination>a:last-child {
+	border-radius: 0 3px 3px 0;
+}
+
+.pagination ol button {
+	border: none;
+}
+
+.pagination ol {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	list-style-type: none;
+}
+
+.pagination li {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 32px;
+	border-right: 1px solid #e1e4e8;
+	font-size: 13px;
+	font-weight: 500;
+	color: #293241;
+}
+
+.pagination li.disabled {
+	background-color: #fff;
+}
+
+.pagination li.current-page {
+	border-color: #e1e4e8;
+	background-color: #293241;
+}
+
+.pagination li.current-page a {
+	color: #fff;
+}
+/* Pagination end */
+.pagination *[disabled], .pagination .disabled {
+	color: #293241;
+	background-color: #fff;
 }

@@ -3978,6 +3978,13 @@ textarea.form-control-lg {
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
+
+/* nav글자크기 수정 */
+ .nav-item {
+	font-size: 14px;
+	margin :5px 0px 5px 10px;
+} 
+
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-left-radius: 0;
