@@ -16,6 +16,8 @@ public class LoginCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		// 이ㅏㅓ이ㅏ이ㅏ
 		// 1. 사용자가 입력한 id, pw 받기
 		request.setCharacterEncoding("UTF-8");
 		
