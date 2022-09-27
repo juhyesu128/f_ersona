@@ -109,74 +109,11 @@ tr {
 }
 
 /* Pagination */
-.pagination {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 3px;
-	border: 1px solid #e1e4e8;
-	width: 160px;
-	height: 32px;
-	margin: 0 auto;
-}
-
 .pagination a, .pagination button {
-	height: 32px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 9px 12px;
-	font-size: 13px;
-	font-weight: 500;
-	color: #293241;
-	text-decoration: none;
-}
-
-.pagination>a:first-child {
-	border-radius: 3px 0 0 3px;
-}
-
-.pagination>a:last-child {
-	border-radius: 0 3px 3px 0;
-}
-
-.pagination ol button {
-	border: none;
-}
-
-.pagination ol {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0;
-	list-style-type: none;
-}
-
-.pagination li {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 32px;
-	border-right: 1px solid #e1e4e8;
-	font-size: 13px;
-	font-weight: 500;
 	color: #293241;
 }
 
-.pagination li.disabled {
-	background-color: #fff;
-}
-
-.pagination li.current-page {
-	border-color: #e1e4e8;
+#link.active .page-link {
 	background-color: #293241;
-}
-
-.pagination li.current-page a {
-	color: #fff;
-}
-/* Pagination end */
-.pagination *[disabled], .pagination .disabled {
-	color: #293241;
-	background-color: #fff;
+	border-color: #293241;
 }

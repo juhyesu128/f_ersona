@@ -90,7 +90,8 @@
 			<%--
 			for (Board b : list) {
 			--%>
-			<tr class="tableHt" onClick ="location.href='reportContent.jsp'" style="cursor:pointer;">
+			<tr class="tableHt" onClick="location.href='reportContent.jsp'"
+				style="cursor: pointer;">
 				<td>1</td>
 				<td>광주광역시 북구 무슨동</td>
 				<td>사기</td>
@@ -108,12 +109,12 @@
 		</table>
 
 		<!-- 이전 다음 페이지 넘기기 pagination -->
-		<ul class="pagination">
-			<li><a href="#">◀</a></li>
-			<li class="current-page"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">▶</a></li>
+		<ul class="pagination pagination-sm justify-content-center">
+			<li id = "link" class="page-item"><a class="page-link" href="#">◀</a></li>
+			<li id = "link" class="page-item"><a class="page-link" href="#">1</a></li>
+			<li id = "link" class="page-item active"><a class="page-link" href="#">2</a></li>
+			<li id = "link" class="page-item"><a class="page-link" href="#">3</a></li>
+			<li id = "link" class="page-item"><a class="page-link" href="#">▶</a></li>
 		</ul>
 	</div>
 
