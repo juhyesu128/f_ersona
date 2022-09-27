@@ -219,19 +219,21 @@
 				</tr>
 				<tr>
 					<td><button class="List_btn" type="button"
-							onclick="location.href='faceUpdate.jsp'">수정하기</button> <td>
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
 						<button class="wantedlist_btn" type="button"
-							onclick="location.href='faceAdd.jsp'">공개수배</button></tr>
-			</
-				table>
-		</div>
-		
-		
-		
-		<!-- 수배자 정보 end -->
-					</div>
-					
-	<!-- 페이지마지막-->
-	<%@include file="footer.jsp"%>
+							onclick="location.href='faceAdd.jsp'">공개수배</button>
+				</tr>
+				</table>
+				</div>
+
+
+
+				<!-- 수배자 정보 end -->
+				</div>
+
+
+				<!-- 페이지마지막-->
+				<%@include file="footer.jsp"%>
 </body>
 </html>
