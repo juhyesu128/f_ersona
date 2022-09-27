@@ -27,43 +27,43 @@
                 <image class="face_image"/>
             </div>
             <div class="wanted_criminal">
-                <div>
+                <div class="wanted_criminal_li">
                     <image class="face_image"/>
                     <ul class="information">
-                        <li>고유번호</li>
-                        <li>이름</li>
-                        <li>나이</li>
-                        <li>죄명</li>
+                        <li>고유번호: <p>1234</p></li>
+                        <li>이름: <p>000</p></li>
+                        <li>나이: <p>000</p></li>
+                        <li>죄명: <p>000</p></li>
                     </ul>
 
                 </div>
-                <div>
+                <div class="wanted_criminal_li">
                     <image class="face_image"/>
                     <ul class="information">
-                        <li>고유번호</li>
-                        <li>이름</li>
-                        <li>나이</li>
-                        <li>죄명</li>
+                        <li>고유번호: <p>1234</p></li>
+                        <li>이름: <p>000</p></li>
+                        <li>나이: <p>000</p></li>
+                        <li>죄명: <p>000</p></li>
                     </ul>
                     
                 </div>
-                <div>
+                <div class="wanted_criminal_li">
                     <image class="face_image"/>
                     <ul class="information">
-                        <li>고유번호</li>
-                        <li>이름</li>
-                        <li>나이</li>
-                        <li>죄명</li>
+                        <li>고유번호: <p>1234</p></li>
+                        <li>이름: <p>000</p></li>
+                        <li>나이: <p>000</p></li>
+                        <li>죄명: <p>000</p></li>
                     </ul>
 
                 </div>
-                <div>
+                <div class="wanted_criminal_li">
                     <image class="face_image"/> 
                     <ul class="information">
-                        <li>고유번호</li>
-                        <li>이름</li>
-                        <li>나이</li>
-                        <li>죄명</li>
+                        <li>고유번호: <p>1234</p></li>
+                        <li>이름: <p>000</p></li>
+                        <li>나이: <p>000</p></li>
+                        <li>죄명: <p>000</p></li>
                     </ul>     
                     
                 </div>
