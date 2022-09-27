@@ -12256,12 +12256,12 @@ textarea.form-control-lg {
   overflow: auto;
   resize: none; */
 }
-.upload{
+/* .upload{
   top: 550px;   
   position: absolute;
  
  
-}
+} */
 
 .face{
   display: flex;
@@ -12285,22 +12285,20 @@ textarea.form-control-lg {
   margin: 10px;
 
 }
-.resetbar_btn{
+/* .resetbar_btn{
   display: inline-flex;
   position: relative;
   width: 300px;
   padding: 10px; 
   margin: 5px 5px 5px 0; 
   font-weight: 600; 
-  text-align:center; 
-  /* line-height: 50px; */
+  text-align:center;  
   color: #FFF; 
   border-radius: 5px;
   transition: all 0.2s ;
   background: #ee964b;
- 
-  
-} 
+   
+}  */
 a {/*a태그*/
   color: #0e0e0e;
   text-decoration: underline;
