@@ -117,7 +117,7 @@ input[type=radio]:checked+label {
 .List_btn {
 	border: none;
 	position: relative;
-	width: 96px;
+	width: 94px;
 	padding: 10px;
 	font-weight: 600;
 	color: bold;
@@ -144,7 +144,7 @@ input[type=radio]:checked+label {
 }
 
 .wantedborder {
-	font-size : 14px;
+	font-size: 14px;
 	border: 1px solid #a5a5a5;
 	width: 212px;
 	display: inline-block;
@@ -165,7 +165,7 @@ input[type=radio]:checked+label {
 .wantedlist_btn {
 	border: none;
 	position: relative;
-	width: 96px;
+	width: 94px;
 	padding: 10px;
 	font-weight: bold;
 	color: white;
@@ -173,9 +173,9 @@ input[type=radio]:checked+label {
 	background: #a5a5a5;
 }
 
-.wantedlist_btn:active {
+/* .wantedlist_btn:active {
 	background-color: red;
-}
+} */
 
 .contain_main {
 	display: flex;
@@ -202,5 +202,5 @@ input[type=radio]:checked+label {
 }
 
 .wantedborder button {
-	margin : 6px 0px;
+	margin: 6px 0px;
 }
