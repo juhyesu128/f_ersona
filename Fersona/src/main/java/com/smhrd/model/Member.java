@@ -14,10 +14,10 @@ import lombok.RequiredArgsConstructor;
 public class Member {
 
 	@NonNull
-	private String id;
+	private String police_id;
 	@NonNull
-	private String pw;
-	private String name;
+	private String admin_pw;
+	private String admin_phone;
 	
 
 }

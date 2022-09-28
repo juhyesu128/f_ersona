@@ -7,13 +7,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.model.MemberDAO">
 
 
+	<insert id="insertMember" parameterType="com.smhrd.model.Member">
+		
+		insert into admin_info values((select police_id from police_info where(police_id=#{police_id})), #{admin_pw}, #{admin_phone})
+		
+	</insert>
+
+
 	<!-- resultType : 데이터 조회 후 가져올 데이터의 타입, select 할 때만 사용 ex. String -->
 	<select id="selectMember" parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
 		
-		select * from admin_info where id=#{id} and pw=#{pw}
+		select * from admin_info where police_id=#{police_id} and admin_pw=#{admin_pw}
 		
 	</select>
-	
 	
 	
 	
