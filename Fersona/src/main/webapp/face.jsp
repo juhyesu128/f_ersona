@@ -24,7 +24,8 @@
         <div class="facespace  px-lg-5">
             <div class="textbar">
                 <textarea class="textspace" id=""></textarea>
-                <input type="file" class="upload">
+                <label for="input-file"class="upload1"><img src="./imgs/mike.jpg" title="음성파일 업로드"></label>
+                <input type="file" class="upload" id="input-file">
                 <div class="resetbar">
                     <a href="#"class="resetbar_btn"onclick="">초기화</a><a href="#"class="facecreate_btn"onclick="">생성하기</a>
 

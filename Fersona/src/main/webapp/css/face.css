@@ -92,7 +92,19 @@ header{
 .upload{
  top:450px;
  left: 10px;
+ /*부모요소 뒤에 사용*/
  position: absolute;
+ display: none; 
+    
+    
+}
+.upload1{
+    /*부모요소 뒤에 사용*/
+    position: absolute; 
+    top:430px;
+    left: 10px;
+    
+    
     
     
 }
