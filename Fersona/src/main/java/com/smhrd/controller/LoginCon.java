@@ -17,7 +17,7 @@ public class LoginCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		// 이ㅏㅓ이ㅏ이ㅏ
+		
 		// 1. 사용자가 입력한 id, pw 받기
 		request.setCharacterEncoding("UTF-8");
 		
@@ -35,7 +35,7 @@ public class LoginCon extends HttpServlet {
 
 		
 		if(loginMember != null) { // 로그인 성공
-			System.out.println("로그인 성공~~~~~~ 이름 : " + loginMember.getName());
+			System.out.println("로그인 성공~~~~~~");
 			
 			// 5. 세션 저장
 			HttpSession session = request.getSession();
