@@ -12198,53 +12198,6 @@ textarea.form-control-lg {
   width: 4rem;
   font-size: 2rem;
 }
-/* main */
-.main{
-  width: 100px;
-  height: 100px;
-  margin: 15px;
-  
-
-}
-
-.m-4 {
-  margin: 1.5rem !important;
-}
-
-.main_li{
-  width: 250px;
-  height: 250px;
-  background:#EE964B;
-  border-radius: 10px;
-  margin: 20px;
-  padding: 30px;
-  border-radius: 30px;
-
-}
-
-.main_headr_span{
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-
-}
-.main_headr{
-  margin: 30px;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-.main_div{
-  justify-content: center;
-  display: flex;
-}
-.cuttentsituation{
-  font-size: 28px;
-  font-weight: 600;
-  margin: 20px;
-  padding: 20px;
- 
-}
 
 /* face */
 
