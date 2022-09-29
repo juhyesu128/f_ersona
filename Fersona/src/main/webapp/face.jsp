@@ -18,6 +18,8 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/face.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<!--navbar-->
@@ -36,20 +38,52 @@
 						class="upload" id="input-file">
 
 					<div class="resetbar">
-						<input type="reset" class="resetbar_btn" value="초기화"> <input
-							type="submit" class="facecreate_btn" value="생성하기">
+						<input type="reset" class="resetbar_btn" value="초기화">
+						<input type="submit" class="facecreate_btn" value="생성하기">
 					</div>
 				</div>
 				<div>
 					<div class="imgspace">
+						<!-- 몽타주 생성 준비중 -->
+
 						<div class="imgspace1">
 							<img class="imgspace2" src="./imgs/drawing.png" alt="첨부파일">
 							<div class="imgspace3">몽타주 생성 준비중</div>
-						</div>
+						</div> 
+
+						<!-- 몽타주 출력 -->
+						<!-- <table>
+							<tr>
+								<td><label><input type="radio" value="img01"
+										name="img">
+										<div class="imgspace01">
+											<img class="imgspace02" src="./imgs/drawing.png" alt="첨부파일">
+										</div></label></td>
+								<td><label><input type="radio" value="img02"
+										name="img">
+										<div class="imgspace01">
+											<img class="imgspace02" src="./imgs/drawing.png" alt="첨부파일">
+										</div></label></td>
+							</tr>
+							<tr>
+								<td><label><input type="radio" value="img03"
+										name="img">
+										<div class="imgspace01">
+											<img class="imgspace02" src="./imgs/drawing.png" alt="첨부파일">
+										</div></label></td>
+								<td><label><input type="radio" value="img04"
+										name="img">
+										<div class="imgspace01">
+											<img class="imgspace02" src="./imgs/drawing.png" alt="첨부파일">
+										</div></label></td>
+							</tr>
+						</table> -->
+						<!-- 몽타주 출력 end -->
 					</div>
 
 					<div class="image_btn">
-						<a href="#middle" class="image_btn1" onclick="nohidden()">유사수배자 조회</a>
+						<a href="#middle" class="image_btn1" onclick="nohidden()">유사수배자
+							조회</a>
 					</div>
 				</div>
 			</div>
@@ -57,7 +91,7 @@
 
 		<!-- 유사수배자 조회 -->
 		<div id="wantedhid">
-			<div class="wanted" id="middle">
+			<!-- <div class="wanted" id="middle">
 				<img class="face_img" src="./imgs/drawing.png" alt="파일준비중">
 			</div>
 			<div class="wanted_criminal">
@@ -153,7 +187,7 @@
 					</table>
 				</div>
 
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<!-- 페이지마지막-->
@@ -164,5 +198,9 @@
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 	<script src="js/face.js"></script>
+	<script>
+		
+	</script>
+
 </body>
 </html>

@@ -41,6 +41,10 @@ header {
 	justify-content: center;
 }
 
+.imgspace label {
+	display: block;
+}
+
 .imgspace {
 	background-color: #ebecf0;
 	width: 500px;
@@ -52,7 +56,7 @@ header {
 
 .imgspace1 {
 	position: relative;
-	top : 150px;
+	top: 150px;
 }
 
 .imgspace2 {
@@ -61,12 +65,32 @@ header {
 	padding-left: 20px;
 }
 
-
 .imgspace3 {
 	position: relative;
 	font-weight: bold;
 	padding-top: 20px;
 	font-size: 18px;
+}
+
+.imgspace01 {
+	position: relative;
+	overflow: hidden;
+	width: 249px;
+	height: 249px;
+}
+
+.imgspace01:hover {
+	border: 5px solid #EE964B;
+	box-sizing: border-box;
+}
+
+.imgspace02 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .textspace {
@@ -97,10 +121,24 @@ header {
 	border: 1px solid #a5a5a5;
 }
 
+.refacecreate_btn {
+	justify-content: center;
+	position: relative;
+	width: 240px;
+	padding: 10px;
+	margin: 5px 0px 5px 0px;
+	font-weight: 600;
+	text-align: center;
+	color: #FFF;
+	transition: all 0.2s;
+	background: #ee964b;
+	border: none;
+}
+
 .facecreate_btn {
 	justify-content: center;
 	position: relative;
-	width: 240px;;
+	width: 240px;
 	padding: 10px;
 	margin: 5px 0px 5px 0px;
 	font-weight: 600;
@@ -176,8 +214,9 @@ header {
 
 /* 유사수배범 조회 */
 #wantedhid {
-	visibility: hidden;
-	position: absolute;
+	/* 	visibility: hidden;
+	position: absolute; */
+	position: static;
 }
 
 .wanted {
@@ -239,4 +278,20 @@ header {
 	height: 380px;
 	margin: 50px 0px 20px 0px;
 	background-color: #ebecf0;
+}
+
+[type=radio] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+[type=radio]+div {
+	cursor: pointer;
+}
+
+[type=radio]:checked+div {
+	border: 5px solid #EE964B;
+	box-sizing: border-box;
 }
