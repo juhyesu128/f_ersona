@@ -21,7 +21,7 @@ rel="stylesheet" />
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/faceUpdate.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="facebady">
  <!--navbar-->
         <%@include file="nav.jsp"%>
         <!--navbar 끝-->
@@ -69,9 +69,9 @@ rel="stylesheet" />
 								<td colspan="2"><select name="police station"
 									class="textcss">
 										<option value="">선택</option>
-										<option value=""selected>광주광역시 결찰청</option>
-										<option value="">광주동부 결찰서</option>
-										<option value="">광주서부 결찰서</option>
+										<option value=""selected>광주광역시 경찰청</option>
+										<option value="">광주동부 경찰서</option>
+										<option value="">광주서부 경찰서</option>
 										<option value="">광주남부 경찰서</option>
 										<option value="">광주북구 경찰서</option>
 										<option value="">광주광산 경찰서</option>

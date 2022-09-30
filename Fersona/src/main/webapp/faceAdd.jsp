@@ -21,20 +21,21 @@
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/faceAdd.css" rel="stylesheet" />
 </head>
-<body>
+<body class="facebady">
 	<!--navbar-->
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
 	<!--navbar-->
 	<header class="contain">
 		<div class="facemain">
-			<div class="facespace1">
-				<div class="imgspace">
-					<img src="">
-				</div>
+			<form action="#" method="post">
+				<div class="facespace1">
+					<div class="imgspace">
+						<label for="faceimags"class="faceimags1"><img class="faceimags2" alt="#" src="./imgs/gallery128px.jpg"></label>
+						<input type="file" id="faceimags">
+					</div>
 
-				<div class="list">
-					<form action="#" method="post">
+					<div class="list">
 						<table>
 							<tr>
 								<td class="text">고유번호</td>
@@ -71,10 +72,12 @@
 								<td colspan="2"><select name="police station"
 									class="textcss">
 										<option value="">선택</option>
-										<option value="">광주동구 경찰서</option>
-										<option value="">광주서구 결찰서</option>
-										<option value="">광주남구 경찰서</option>
+										<option value="">광주광역시 경찰청</option>
+										<option value="">광주동부 경찰서</option>
+										<option value="">광주서부 경찰서</option>
+										<option value="">광주남부 경찰서</option>
 										<option value="">광주북구 경찰서</option>
+										<option value="">광주광산 경찰서</option>
 
 								</select></td>
 							</tr>
@@ -84,16 +87,17 @@
 									class="radiochk" value="N">미공개<br> <input
 									type="radio" name="chk" class="radiochk" value="Y">공개</td>
 							</tr>
-							<div class="registration">			
-								<input id="joincss" type="submit" value="등록하기" class="registration_btn"></input> 
-								<input id="cancel" type="button" value="취소하기"class="cancellation_btn" 
-								onclick="location.replace('faceInfoList.jsp');"></input>
-								
+							<div class="registration">
+								<input id="joincss" type="submit" value="등록하기"
+									class="registration_btn"></input> <input id="cancel"
+									type="button" value="취소하기" class="cancellation_btn"
+									onclick="location.replace('faceInfoList.jsp');"></input>
+
 							</div>
 						</table>
-					</form>
-				</div>
-			</div>
+			</form>
+		</div>
+		</div>
 		</div>
 
 	</header>
