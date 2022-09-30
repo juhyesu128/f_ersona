@@ -84,3 +84,12 @@ table {
 tr {
 	height: 50px;
 }
+
+#ck {
+	visibility: hidden;
+	width : 20x;
+	height: 20px;
+	position: absolute;
+	right : 8px;
+	top: 238px;
+}

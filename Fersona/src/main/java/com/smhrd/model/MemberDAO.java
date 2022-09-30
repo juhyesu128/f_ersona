@@ -9,41 +9,55 @@ public class MemberDAO {
 
 	// 세션을 생성해줄 수 있는 factory 생성
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
-	
+
 	// 세션 생성(sql 실행, close(), 연결(connection))
-	SqlSession  sqlSession = sqlSessionFactory.openSession();
-	
+	SqlSession sqlSession = sqlSessionFactory.openSession();
+
 	// 회원가입 메서드
 	public int insertMember(Member vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.model.MemberDAO.insertMember",vo);
-			if(cnt>0) {
+			cnt = sqlSession.insert("com.smhrd.model.MemberDAO.insertMember", vo);
+			if (cnt > 0) {
 				sqlSession.commit();
-			}else {
+			} else {
 				sqlSession.rollback();
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			sqlSession.close();
 		}
 		return cnt;
 	}
-	
-	
+
 	// 로그인 메서드
 	public Member selectMember(Member vo) {
 		Member loginMember = null;
 		try {
 			loginMember = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectMember", vo);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			sqlSession.close();
 		}
 		return loginMember;
 	}
-	
+
+	// 사원번호 조회
+	public Police checkMember(Police vo) {
+		Police loginMember = null;
+		try {
+			loginMember = sqlSession.selectOne("com.smhrd.model.MemberDAO.checkMember", vo);
+			/* System.out.println("sql성공"); */
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("sql실패");
+		} finally {
+			sqlSession.close();
+		}
+		return loginMember;
+	}
+
 	
 }
