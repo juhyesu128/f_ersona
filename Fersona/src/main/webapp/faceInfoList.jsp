@@ -109,8 +109,153 @@
 			</table>
 		</div>
 		
-		<!-- 반복작성 -->
+		<div class="wantedborder">
+			<div class="face_img_frame">
+				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
+			</div>
+			<table>
+				<tr>
+					<td colspan="2">고유번호 :
+						<p>1</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">이름 :
+						<p>홍길동 (51, 남)</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">죄명 :
+						<p>살인</p>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="List_btn" type="button"
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
+						<button class="wantedlist_btn" type="button">공개수배</button>
+				</tr>
+			</table>
+		</div>
 		
+		<div class="wantedborder">
+			<div class="face_img_frame">
+				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
+			</div>
+			<table>
+				<tr>
+					<td colspan="2">고유번호 :
+						<p>1</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">이름 :
+						<p>홍길동 (51, 남)</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">죄명 :
+						<p>살인</p>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="List_btn" type="button"
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
+						<button class="wantedlist_btn" type="button">공개수배</button>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="wantedborder">
+			<div class="face_img_frame">
+				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
+			</div>
+			<table>
+				<tr>
+					<td colspan="2">고유번호 :
+						<p>1</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">이름 :
+						<p>홍길동 (51, 남)</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">죄명 :
+						<p>살인</p>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="List_btn" type="button"
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
+						<button class="wantedlist_btn" type="button">공개수배</button>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="wantedborder">
+			<div class="face_img_frame">
+				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
+			</div>
+			<table>
+				<tr>
+					<td colspan="2">고유번호 :
+						<p>1</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">이름 :
+						<p>홍길동 (51, 남)</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">죄명 :
+						<p>살인</p>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="List_btn" type="button"
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
+						<button class="wantedlist_btn" type="button">공개수배</button>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="wantedborder">
+			<div class="face_img_frame">
+				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
+			</div>
+			<table>
+				<tr>
+					<td colspan="2">고유번호 :
+						<p>1</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">이름 :
+						<p>홍길동 (51, 남)</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">죄명 :
+						<p>살인</p>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="List_btn" type="button"
+							onclick="location.href='faceUpdate.jsp'">수정하기</button>
+					<td>
+						<button class="wantedlist_btn" type="button">공개수배</button>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 반복작성 -->
+
 
 		<!-- 수배자 정보 end -->
 	</div>
@@ -118,24 +263,8 @@
 
 	<!-- 페이지마지막-->
 	<%@include file="footer.jsp"%>
+	
+	<script src="js/faceInfoList.js"></script>
 
-
-
-	<script>
-		/* 공개수배 버튼클릭시 색상유지 */
-		var btn = document.querySelector('.wantedlist_btn');
-		var check = false;
-
-		btn.onclick = function() {
-			if (!check) {
-				this.style.backgroundColor = 'red';
-				check = true;
-			} else {
-				this.style.backgroundColor = '#a5a5a5';
-				check = false;
-			}
-		}
-		/* 공개수배 버튼클릭시 색상유지 end */
-	</script>
 </body>
 </html>

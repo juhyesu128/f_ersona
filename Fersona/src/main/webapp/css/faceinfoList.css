@@ -173,6 +173,17 @@ input[type=radio]:checked+label {
 	background: #a5a5a5;
 }
 
+.nowantedlist_btn {
+	border: none;
+	position: relative;
+	width: 94px;
+	padding: 10px;
+	font-weight: bold;
+	color: white;
+	transition: all 0.2s;
+	background: red;
+}
+
 /* .wantedlist_btn:active {
 	background-color: red;
 } */
