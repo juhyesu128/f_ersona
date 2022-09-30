@@ -89,6 +89,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- jsp 작업할때 필요시 버튼사용 -->
 						<!-- <button class="search_btn" type="submit" value="submit">저장</button> -->
 					</td>
 				</tr>

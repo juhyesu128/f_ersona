@@ -76,6 +76,10 @@
 					</select></td>
 				</tr>
 			</table>
+			<div id = "search_margin">
+				<input type="reset" class="resetbar_btn" value="초기화">
+				<input type="submit" class="facecreate_btn" value="검색">
+			</div>
 		</form>
 
 		<!-- -----수배자 정보----- -->
@@ -108,7 +112,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<div class="wantedborder">
 			<div class="face_img_frame">
 				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
@@ -137,7 +141,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<div class="wantedborder">
 			<div class="face_img_frame">
 				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
@@ -166,7 +170,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<div class="wantedborder">
 			<div class="face_img_frame">
 				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
@@ -195,7 +199,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<div class="wantedborder">
 			<div class="face_img_frame">
 				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
@@ -224,7 +228,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<div class="wantedborder">
 			<div class="face_img_frame">
 				<!-- <img class="face_img" src="./imgs/gallery.png" alt="첨부파일"> -->
@@ -263,7 +267,7 @@
 
 	<!-- 페이지마지막-->
 	<%@include file="footer.jsp"%>
-	
+
 	<script src="js/faceInfoList.js"></script>
 
 </body>
