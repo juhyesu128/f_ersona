@@ -31,10 +31,11 @@
 			<form action="#" method="post">
 				<div class="facespace1">
 					<div class="imgspace">
-						<label for="faceimags"class="faceimags1"><img class="faceimags2" alt="#" src="./imgs/gallery128px.jpg"></label>
+						<label for="faceimags"class="faceimags1"><p class="faceimags_p">클릭시 사진업로드 됩니다.</p>
+						<img class="faceimags2" src="./imgs/gallery128px.jpg">
 						<input type="file" id="faceimags">
+					</label>
 					</div>
-
 					<div class="list">
 						<table>
 							<tr>
