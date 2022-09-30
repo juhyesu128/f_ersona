@@ -53,7 +53,7 @@
 									class="textcss">
 
 										<option value="">선택</option>
-										<option value="">뺑소니사건</option>
+										<option value="">뺑소니</option>
 										<option value="">강도</option>
 										<option value="">절도</option>
 										<option value="">살인</option>

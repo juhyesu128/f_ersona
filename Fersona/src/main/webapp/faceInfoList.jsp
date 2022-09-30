@@ -67,6 +67,7 @@
 					<td class="text">죄명</td>
 					<td><select name="rep_cate">
 							<option value="">전체</option>
+							<option value="">뺑소니</option>
 							<option value="">강도</option>
 							<option value="">절도</option>
 							<option value="">살인</option>
