@@ -15,7 +15,10 @@
 </head>
 <body>
 	<%
-	Police checkVO = (Police) session.getAttribute("loginMember");
+	//포워딩 방식으로 값을 부를 때
+	// .getAttribute >> 반환타입 object
+	Police checkVO = (Police) request.getAttribute("loginMember");
+	String cnt = (String) request.getAttribute("cnt");
 	%>
 
 	<div class="container">
@@ -24,14 +27,24 @@
 			<table>
 				<tr id="fontwhite">
 					<td class="text"></td>
-					<td colspan="2" id="check_txt"></td>
+					<td colspan="2" id="check_txt">
+						<%
+						if (checkVO != null) {
+						%> 사용가능한 사원번호입니다. <%
+						} else {
+						if (cnt != null) {
+						%> 사원번호가 조회되지 않습니다. <%
+						}
+						}
+						%>
+					</td>
 				</tr>
 				<tr>
 					<td class="text">사원번호</td>
 					<td><input type="text" name="police_id" id="user_id"
 						placeholder="사원번호를 입력해주세요"
 						value="<%if (checkVO != null) {%><%=checkVO.getPolice_id()%><%}%>"></td>
-					<td><input type="submit" value="사번조회" onclick="check_id()"></td>
+					<td><input type="submit" value="사번조회"></td>
 				</tr>
 				<tr>
 					<td class="text">비밀번호</td>
@@ -105,7 +118,6 @@
 			}
 		};
 
-		
 		/* 비밀번호 확인 */
 		function check_pw() {
 			var pw = document.getElementById('pswd1').value;
