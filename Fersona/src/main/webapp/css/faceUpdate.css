@@ -159,19 +159,16 @@ tr {
 .radiochk{	
 	height: 20px;
 	width: 50px;
-	
-	
 }
+
 .registration{
-	
 	align-items: center;
 	position: relative;
 	top: 430px;
 	right: 180px;
 	margin-top: 500px;
-	
-		
 }
+
 .registration_btn{
 	width: 100%;
 	font-size: 15px;	
@@ -181,9 +178,8 @@ tr {
 	color: white;
 	border: none;
 	padding-right: 10px;
-	
-
 }
+
 .cancellation_btn{
 	width: 100%;
 	font-size: 15px;	
@@ -192,5 +188,4 @@ tr {
 	color: white;
 	border: none;
 	padding-right: 10px;
-    
 }

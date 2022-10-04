@@ -24,11 +24,11 @@
         <header class="bg-secondary py-5">
         <article class="container px-lg-5 ">
             <div class="wanted">
-                <image class="face_image"/>
+                <img class="face_image"/>
             </div>
             <div class="wanted_criminal">
                 <div class="wanted_criminal_li">
-                    <image class="face_image"/>
+                    <img class="face_image"/>
                     <ul class="information">
                         <li>고유번호: <p>1234</p></li>
                         <li>이름: <p>000</p></li>
@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="wanted_criminal_li">
-                    <image class="face_image"/>
+                    <img class="face_image"/>
                     <ul class="information">
                         <li>고유번호: <p>1234</p></li>
                         <li>이름: <p>000</p></li>
@@ -48,7 +48,7 @@
                     
                 </div>
                 <div class="wanted_criminal_li">
-                    <image class="face_image"/>
+                    <img class="face_image"/>
                     <ul class="information">
                         <li>고유번호: <p>1234</p></li>
                         <li>이름: <p>000</p></li>
@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="wanted_criminal_li">
-                    <image class="face_image"/> 
+                    <img class="face_image"/> 
                     <ul class="information">
                         <li>고유번호: <p>1234</p></li>
                         <li>이름: <p>000</p></li>

@@ -38,10 +38,14 @@
 
 <!-- 폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+
+<!-- 숫자카운트 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 <body>
@@ -49,42 +53,65 @@
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
 
+	<%
+	int a = 9; // 뺑소니사건
+	int b = 14; // 강도
+	int c = 38; // 절도
+	int d = 3; // 살인
+	int e = 13; // 사기
+	int f = 19; // 폭력
+	int g = 15; // 성범죄
+	int h = 21; // 기타
+	int sum = a + b + c + d + e + f + g + h; // 총사건수
+	%>
 	<!-- Header-->
 	<div class="headr">
 		<div class="contain">
-			<p id="tit">쉽고 빠르고 간편한 스마트 몽타주 수사</p>
+			<!-- <p id="tit">쉽고 빠르고 간편한 스마트 몽타주 수사</p> -->
 			<div class="main_div">
-				<div class="main_li" onClick="location.href='face.jsp'"
-					style="cursor: pointer;">
+				<div class="main_li">
 					<div>
-						<img class="main01" src="./imgs/몽타주생성.jpg"></img> <br> <span
-							class="main_headr_span">몽타주생성</span>
+						<span class="headr_span01">총</span> <span class="headr_span02 countArea">
+							<%=sum%></span> <span class="headr_span01">건</span>
+						<p class="headr_span03">오늘의 신고</p>
 					</div>
 
 				</div>
 
-				<div class="main_li" onClick="location.href='face.jsp'"
-					style="cursor: pointer;">
-					<div>
-						<img class="main02" src="./imgs/유사수배자.jpg"></img> <br> <span
-							class="main_headr_span">유사수배자조회</span>
-					</div>
-				</div>
-
-				<div class="main_li" onClick="location.href='faceInfoList.jsp'"
-					style="cursor: pointer;">
-					<div>
-						<img class="main03" src="./imgs/수배자정보.jpg"></img> <br> <span
-							class="main_headr_span">수배자 정보</span>
-					</div>
-				</div>
-
-				<div class="main_li" onClick="location.href='reportList.jsp'"
-					style="cursor: pointer;">
-					<div>
-						<img class="main04" src="./imgs/제보신고.jpg"></img> <br> <span
-							class="main_headr_span">제보/신고조회</span>
-					</div>
+				<div class="main_li2">
+					<table class="today">
+						<tr>
+							<td>
+								<div>
+									<span class="today_02"><%=a%></span> <span class="today_03">건</span>
+								</div>
+								<p class="today_01">뺑소니사건</p>
+							</td>
+							<td><span class="today_02"><%=b%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">강도</p></td>
+							<td><span class="today_02"><%=c%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">절도</p></td>
+							<td><span class="today_02"><%=d%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">살인</p></td>
+						</tr>
+						<tr>
+							<td><span class="today_02"><%=e%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">사기</p></td>
+							<td><span class="today_02"><%=f%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">폭력</p></td>
+							<td><span class="today_02"><%=g%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">성범죄</p></td>
+							<td><span class="today_02"><%=h%></span> <span
+								class="today_03">건</span>
+								<p class="today_01">기타</p></td>
+						</tr>
+					</table>
 				</div>
 
 			</div>
@@ -205,6 +232,7 @@
 	<script src="script.js"></script>
 
 	<script>
+		// 파이그래프
 		var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
 
 		KoolChart.create("chart1", "chartHolder", chartVars, "100%", "100%");
@@ -241,14 +269,35 @@
 				+ '</Pie2DChart>' + '</KoolChart>';
 
 		var chartData = [ {
-			"Month" : "접수대기", "Profit" :241
+			"Month" : "접수대기",
+			"Profit" : 241
 		}, {
-			"Month" : "접수중", "Profit" :122
+			"Month" : "접수중",
+			"Profit" : 122
 		}, {
-			"Month" : "진행중", "Profit" :180
-		},{
-			"Month" : "진행완료", "Profit" :173
+			"Month" : "진행중",
+			"Profit" : 180
+		}, {
+			"Month" : "진행완료",
+			"Profit" : 173
 		} ];
+
+		
+		// 숫자 카운트
+		$({
+			value : 0
+		}).animate({
+			value : <%=sum %>
+		}, {
+			duration : 1000,
+			step : function() {
+				$(".countArea").text(Math.floor(this.value));
+			},
+			complete : function() {
+				$(".countArea").text(Math.floor(this.value));
+			}
+		});
+		
 	</script>
 </body>
 </html>

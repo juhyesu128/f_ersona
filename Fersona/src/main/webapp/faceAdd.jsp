@@ -31,10 +31,10 @@
 			<form action="#" method="post">
 				<div class="facespace1">
 					<div class="imgspace">
-						<label for="faceimags"class="faceimags1"><p class="faceimags_p">클릭시 사진업로드 됩니다.</p>
-						<img class="faceimags2" src="./imgs/gallery128px.jpg">
-						<input type="file" id="faceimags">
-					</label>
+						<label for="faceimags" class="faceimags1">
+						<p class="faceimags_p">클릭시 사진업로드 됩니다.</p> <img class="faceimags2"
+							src="./imgs/gallery128px.jpg"> <input type="file"
+							id="faceimags"> </label>
 					</div>
 					<div class="list">
 						<table>
@@ -93,12 +93,11 @@
 									class="registration_btn"></input> <input id="cancel"
 									type="button" value="취소하기" class="cancellation_btn"
 									onclick="location.replace('faceInfoList.jsp');"></input>
-
 							</div>
 						</table>
+					</div>
+				</div>
 			</form>
-		</div>
-		</div>
 		</div>
 
 	</header>
