@@ -84,7 +84,7 @@ rel="stylesheet" />
 									class="radiochk" value="N" checked>미공개<br> <input
 									type="radio" name="chk" class="radiochk" value="Y">공개</td>
 							</tr>
-							<div class="registration">
+							<div class = "registration">
 								<input id="saves" type="submit" value="저장하기" class="save_btn" >
 								<input id="cancel" type="submit" value="삭제하기" class="save_btn">
 							</div>
