@@ -3933,7 +3933,7 @@ textarea.form-control-lg {
 }
 
 .nav-link {
-  /*display: block;*/
+  display: inline;
   padding: 0.5rem 1rem;
   color: #fff !important;
   text-decoration: none;
