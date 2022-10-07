@@ -65,12 +65,12 @@
 					<td><input type="submit" name="codenum_check" value="확인"></td>
 				</tr>
 				<tr>
-					<td class="text">관할지</td>
-					<td colspan="2"><span class="noupdate">광주북구경찰서</span></td>
+					<td class="text">관할지역</td>
+					<td colspan="2"><span class="noupdate">광주광역시</span></td>
 				</tr>
 				<tr>
-					<td class="text">근무부서</td>
-					<td colspan="2"><span class="noupdate">순찰부</span></td>
+					<td class="text">관할관서</td>
+					<td colspan="2"><span class="noupdate">북구경찰서</span></td>
 				</tr>
 			</table>
 			<!-- <button type="submit" value="join">회원가입</button> -->

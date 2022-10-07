@@ -81,13 +81,13 @@
 						id="user_num" placeholder="'-'를 빼고 숫자만 입력해주세요" maxlength="11"></td>
 				</tr>
 				<tr>
-					<td class="text">관할지</td>
+					<td class="text">관할지역</td>
 					<td colspan="2"><input onclick="ckfunc()" type="text"
 						name="police_adr1" readonly placeholder="관할지를 지정해주세요"
 						value="<%if (checkVO != null) {%><%=checkVO.getPolice_adr1()%><%}%>"></td>
 				</tr>
 				<tr>
-					<td class="text">근무부서</td>
+					<td class="text">관할관서</td>
 					<td colspan="2"><input onclick="ckfunc()" type="text"
 						name="police_adr2" readonly placeholder="근무부서를 지정해주세요"
 						value="<%if (checkVO != null) {%><%=checkVO.getPolice_adr2()%><%}%>"></td>
