@@ -58,6 +58,19 @@ public class MemberDAO {
 		}
 		return loginMember;
 	}
+	
+	// 가입자 체크
+	public boolean idCheck(String inputid) {
+		boolean checkID = false;
+		try {
+			checkID = sqlSession.selectOne("com.smhrd.model.MemberDAO.idCheck", inputid);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return checkID;
+	}
 
 	
 }

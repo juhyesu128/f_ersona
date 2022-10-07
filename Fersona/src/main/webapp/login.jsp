@@ -9,6 +9,14 @@
 
 </head>
 <body>
+	<%
+	String result = (String) request.getAttribute("result");
+	System.out.println(result);
+	if (result!=null && result.equals("success")) {
+		out.println("<script>alert('회원가입이 완료되었습니다.');</script>");
+		out.flush();
+	}
+	%>
 
 	<div class="container">
 		<!-- Logo 시작 -->
@@ -23,8 +31,7 @@
 				</div>
 
 				<div class="form-item">
-					<input type="password" name="pw"
-						placeholder="비밀번호를 입력해주세요">
+					<input type="password" name="pw" placeholder="비밀번호를 입력해주세요">
 				</div>
 				<div>
 					<input type="submit" value="로그인">
