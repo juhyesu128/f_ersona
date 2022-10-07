@@ -21,11 +21,11 @@
 	Police checkVO = (Police) request.getAttribute("loginMember");
 	String cnt = (String) request.getAttribute("cnt");
 	String user_num = (String) request.getAttribute("user_num");
-
-	String result = "대기";
-	result = (String) request.getAttribute("result");
+	String key = (String) request.getAttribute("key");
+	System.out.print(key);
+	String result = (String) request.getAttribute("result");
 	if (result != null && result.equals("fail")) {
-		out.println("<script>alert('이미 가입된 회원 등의 이유로 회원가입이 실패하였습니다. ');</script>");
+		out.println("<script>alert('이미 가입된 회원 등의 이유로 회원가입이 실패하였습니다.');</script>");
 		out.flush();
 	}
 	%>
@@ -52,14 +52,37 @@
 						placeholder="사원번호를 입력해주세요"
 						value="<%if (checkVO != null) {%><%=checkVO.getPolice_id()%><%}%>"></td>
 					<td><input type="submit" id="id_check" value="사번 조회"
-						style="cursor: pointer;" formaction="policeCon" onclick="ch()"></td>
+						style="cursor: pointer;" formaction="policeCon"></td>
 				</tr>
 				<tr>
 					<td class="text">이름</td>
 					<td colspan="2"><input onclick="ckfunc()" type="text"
-						name="police_name" readonly placeholder="이름을 입력해주세요"
+						id="police_name" name="police_name" readonly
+						placeholder="이름을 입력해주세요"
 						value="<%if (checkVO != null) {%><%=checkVO.getPolice_name()%><%}%>"></td>
 				</tr>
+				<tr id="fontwhite">
+					<td class="text"></td>
+					<td colspan="2">'-'를 빼고 숫자만 입력해주세요</td>
+				</tr>
+				<tr>
+					<td class="text">핸드폰 번호</td>
+					<td><input type="text" name="user_num" id="user_num"
+						placeholder="핸드폰 번호를 입력해주세요"
+						value="<%if (user_num != null) {%><%=user_num%><%}%>"></td>
+					<td><input type="button" name="phone_check" id="phone_check"
+						value="인증번호 요청" style="cursor: pointer;" formaction="sendSms"
+						method="post" maxlength="11"></td>
+				</tr>
+				<tr>
+					<td class="text"></td>
+					<td><input type="text" name="codenum"
+						placeholder="인증번호 6자리를 입력해주세요" id="codenum" value=""> <input
+						type="hidden" id="codenum2" value="<%=key%>"></td>
+					<td><button type="button" name="codenum_check"
+							id="codenum_check" style="cursor: pointer;">확인</button></td>
+				</tr>
+
 				<tr>
 					<td class="text">비밀번호</td>
 					<td colspan="2"><input type="password" id="pswd1"
@@ -70,15 +93,6 @@
 					<td colspan="2"><input type="password" id="pswd2"
 						placeholder="위와 동일한 비밀번호를 입력해주세요" onchange="check_pw()"><img
 						id="ck" src="./imgs/check.png"></td>
-				</tr>
-				<!-- <tr id="fontwhite">
-					<td class="text"></td>
-					<td colspan="2">'-'를 빼고 숫자만 입력해주세요</td>
-				</tr> -->
-				<tr>
-					<td class="text">핸드폰 번호</td>
-					<td colspan="2"><input type="text" name="admin_phone"
-						id="user_num" placeholder="'-'를 빼고 숫자만 입력해주세요" maxlength="11"></td>
 				</tr>
 				<tr>
 					<td class="text">관할지역</td>
@@ -135,11 +149,27 @@
 				}
 			}
 		}
-
+		
 		/* 핸드폰 번호 입력 */
-		/* 		$('#phone_check').click(function() {
-		 window.alert("정확한 핸드폰 번호를 입력해주세요");
-		 }); */
+		// 인증번호 전송
+		$('#phone_check').click(function() {
+			document.getElementById('phone_check').type = 'submit';
+			window.alert("인증번호가 전송되었습니다.");
+		});
+
+		// 인증번호 확인
+		$('#codenum_check').click(function() {
+			let codenum = Number($('#codenum').val());
+			let codenum2 = Number($('#codenum2').val());
+
+			if (codenum == codenum2) {
+				window.alert('휴대폰 번호가 인증되었습니다.');
+				$('#codenum_check').css('background', '#7f7f7f');
+				$('#codenum_check').text('확인 완료');
+			} else {
+				window.alert('잘못된 인증번호입니다.');
+			}
+		});
 	</script>
 </body>
 </html>

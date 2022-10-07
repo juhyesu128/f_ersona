@@ -80,7 +80,7 @@ button {
 	text-align: center;
 	background: #EE964B;
 	color: white;
-} 
+}
 
 h2 {
 	color: white;
@@ -88,12 +88,12 @@ h2 {
 }
 
 td {
-	/* width: 100%; */
+	width: 100%;
 	text-align: left;
 }
 
 .text {
-	/* width: 30%; */
+	width: 30%;
 	align-items: center;
 	color: white;
 }
@@ -109,14 +109,14 @@ table {
 }
 
 tr {
-	height: 60px;
+	height: 50px;
 }
 
 #ck {
 	visibility: hidden;
-	width : 20x;
+	width: 20x;
 	height: 20px;
 	position: absolute;
-	right : 8px;
-	top: 324px;
+	right: 4px;
+	bottom: 199px;
 }
