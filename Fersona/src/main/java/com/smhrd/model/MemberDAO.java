@@ -105,7 +105,24 @@ public class MemberDAO {
 		return list;
 	}
 	
-	
+	// 회원정보 삭제
+	public int deleteMember(String mem_id) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.model.MemberDAO.deleteMember",mem_id);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+
 
 	
 }

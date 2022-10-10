@@ -78,25 +78,27 @@
 		</form>
 
 		<!-- 리스트 -->
-		<p id="totalLeft">총 00건이 검색되었습니다.</p>
+		<p id="totalLeft">총 <%=list.size()%>건이 검색되었습니다.</p>
 		<table class="table">
 			<tr id="th" class="tableHt">
-				<th><input type='checkbox' name='deletes' id="check-all" /></th>
 				<th>ID</th>
 				<th>이름</th>
 				<th>핸드폰 번호</th>
 				<th>생년월일</th>
 				<th>거주지</th>							
+				<th>기타</th>						
+				<!-- <th><input type='checkbox' name='deletes' id="check-all" /></th> -->
 			</tr>
 			
-			<%for(User u:list){%>
+			<%for(int i=0; i<list.size(); i++){ %>
 			<tr class="tableHt">
-				<td class = "table01"><input type='checkbox' name='deletes' id="check<% %>" /></td>
-				<td class = "table02"><%=u.getMem_id() %></td>
-				<td class = "table03"><%=u.getMem_name()%></td>
-				<td class = "table04"><%=u.getMem_tel() %></td>
-				<td class = "table05"><%=u.getMem_join() %></td>
-				<td class = "table07"><%=u.getMem_adr1() + " " + u.getMem_adr2() %></td>
+				<%-- <td class = "table01"><input type='checkbox' name='deletes' id="check<%=i%>" /></td> --%>
+				<td class = "table02"><%=list.get(i).getMem_id() %></td>
+				<td class = "table03"><%=list.get(i).getMem_name()%></td>
+				<td class = "table04"><%=list.get(i).getMem_tel() %></td>
+				<td class = "table05"><%=list.get(i).getMem_join() %></td>
+				<td class = "table07"><%=list.get(i).getMem_adr1() + " " + list.get(i).getMem_adr2() %></td>
+				<td class = "table01"><a href="DeleteCon?mem_id=<%=list.get(i).getMem_id()%>">삭제</a></td>
 			</tr>
 			<%} %>
 		</table>

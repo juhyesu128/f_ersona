@@ -44,5 +44,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from mem_info
 	</select>
 	
+	<!-- 회원정보 삭제 -->
+	<delete id="deleteMember" parameterType="String">
+		delete from mem_info where mem_id=#{mem_id}
+	</delete>
 
 </mapper>
