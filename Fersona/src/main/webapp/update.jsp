@@ -1,3 +1,6 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.smhrd.model.Police"%>
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +29,11 @@
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
 
-
+	<% 
+		Member loginMember = (Member)session.getAttribute("loginMember"); 
+	%>
+	
+	
 	<div class="contain">
 		<form action="JoinCon" method="post">
 			<p id="tit">개인정보수정</p>
@@ -34,21 +41,19 @@
 			<table>
 				<tr>
 					<td class="text">사원번호</td>
-					<td colspan="2"><span class="noupdate">12345678</span></td>
+					<td colspan="2"><span class="noupdate" name="police_id"><%=loginMember.getPolice_id() %></span></td>
 				</tr>
 				<tr>
 					<td class="text">비밀번호</td>
-					<td colspan="2"><input type="password" name="pswd1" value="12345678"
-						placeholder="변경할 비밀번호를 입력해주세요"></td>
+					<td colspan="2"><input type="password" name="admin_pw" id="pswd1" onchange="check_pw()" placeholder="변경할 비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<td class="text">비밀번호 확인</td>
-					<td colspan="2"><input type="password" name="pswd2" value="12345678"
-						placeholder="위와 동일한 비밀번호를 입력해주세요"></td>
+					<td colspan="2"><input type="password" name="pswd2" id="pswd2" onchange="check_pw()" placeholder="위와 동일한 비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<td class="text">이름</td>
-					<td colspan="2"><span class="noupdate">홍길동</span></td>
+					<td colspan="2"><span class="noupdate">관리자</span></td>
 				</tr>
 				<tr id="fontwhite">
 					<td class="text"></td>
@@ -56,8 +61,8 @@
 				</tr>
 				<tr>
 					<td class="text">핸드폰 번호</td>
-					<td><input type="text" name="phone" placeholder="핸드폰 번호를 입력"></td>
-					<td><input type="submit" name="phone_check" value="인증번호 요청"></td>
+					<td><input type="text" name="admin_phone" placeholder="핸드폰 번호를 입력"></td>
+					<td><input type="submit" name="phone_check" id="phone_check" value="인증번호 요청"></td>
 				</tr>
 				<tr>
 					<td class="text"></td>
@@ -88,5 +93,45 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
+	
+	<script type="text/javascript">
+
+		/* 비밀번호 확인 */
+		function check_pw() {
+			var pw = document.getElementById('pswd1').value;
+
+			if (document.getElementById('pswd1').value != ''
+					&& document.getElementById('pswd2').value != '') {
+				if (document.getElementById('pswd1').value == document
+						.getElementById('pswd2').value) {
+					document.getElementById('ck').style.visibility = 'visible';
+				} else {
+					window.alert('비밀번호가 일치하지 않습니다.');
+				}
+			}
+		}
+		
+		/* 핸드폰 번호 입력 */
+		// 인증번호 전송
+		$('#phone_check').click(function() {
+			document.getElementById('phone_check').type = 'submit';
+			window.alert("인증번호가 전송되었습니다.");
+		});
+
+		// 인증번호 확인
+		$('#codenum_check').click(function() {
+			let codenum = Number($('#codenum').val());
+			let codenum2 = Number($('#codenum2').val());
+
+			if (codenum == codenum2) {
+				window.alert('휴대폰 번호가 인증되었습니다.');
+				$('#codenum_check').css('background', '#7f7f7f');
+				$('#codenum_check').text('확인 완료');
+			} else {
+				window.alert('잘못된 인증번호입니다.');
+			}
+		});
+		
+	</script>
 </body>
 </html>

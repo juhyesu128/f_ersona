@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.User"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,6 +30,12 @@
 	<!--navbar-->
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
+	
+	<%
+		MemberDAO dao = new MemberDAO();
+		List<User> list = dao.selectAllMember();
+		System.out.print(list.size());
+	%>
 
 	<!-- 대상구분  -->
 	<div class="contain">
@@ -77,31 +86,21 @@
 				<th>이름</th>
 				<th>핸드폰 번호</th>
 				<th>생년월일</th>
-				<th>거주지</th>
-				<th>가입일</th>
+				<th>거주지</th>							
 			</tr>
 			
+			<%for(User u:list){%>
 			<tr class="tableHt">
-				<td class = "table01"><input type='checkbox' name='deletes' id="check1" /></td>
-				<td class = "table02">admin123</td>
-				<td class = "table03">홍길동</td>
-				<td class = "table04">01012345678</td>
-				<td class = "table05">1999.11.12.</td>
-				<td class = "table06">광주광역시 북구 무슨동</td>
-				<td class = "table07">2022.08.01.</td>
+				<td class = "table01"><input type='checkbox' name='deletes' id="check<% %>" /></td>
+				<td class = "table02"><%=u.getMem_id() %></td>
+				<td class = "table03"><%=u.getMem_name()%></td>
+				<td class = "table04"><%=u.getMem_tel() %></td>
+				<td class = "table05"><%=u.getMem_join() %></td>
+				<td class = "table07"><%=u.getMem_adr1() + " " + u.getMem_adr2() %></td>
 			</tr>
-			
-			<tr class="tableHt">
-				<td class = "table01"><input type='checkbox' name='deletes' id="check2" /></td>
-				<td class = "table02">admin123</td>
-				<td class = "table03">홍길동</td>
-				<td class = "table04">01012345678</td>
-				<td class = "table05">1999.11.12.</td>
-				<td class = "table06">광주광역시 북구 무슨동</td>
-				<td class = "table07">2022.08.01.</td>
-			</tr>
-
+			<%} %>
 		</table>
+		
 		<div id="dele">
 			<input class="wantedlist" type="submit" value="삭제하기">
 		</div>

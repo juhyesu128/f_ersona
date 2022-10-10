@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -71,6 +73,39 @@ public class MemberDAO {
 		}
 		return checkID;
 	}
+	
+	// 회원정보 수정
+	public int updateMember(Member vo) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.model.MemberDAO.update",vo);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
+	// 회원정보 조회
+	public List<User> selectAllMember() {
+		List<User> list = null;
+		try {
+			list = sqlSession.selectList("com.smhrd.model.MemberDAO.selectAllMember");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+	
 
 	
 }
