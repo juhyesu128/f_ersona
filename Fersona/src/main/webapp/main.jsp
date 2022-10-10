@@ -63,6 +63,8 @@
 	int g = 15; // 성범죄
 	int h = 21; // 기타
 	int sum = a + b + c + d + e + f + g + h; // 총사건수
+	
+	
 	%>
 	<!-- Header-->
 	<div class="headr">
