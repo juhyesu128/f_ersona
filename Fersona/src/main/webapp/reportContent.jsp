@@ -21,6 +21,8 @@
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
+
+
 </head>
 <body>
 	<!-- navbar -->
@@ -52,8 +54,7 @@
 				</tr>
 				<tr class="tableHt">
 					<td class="thbg">사건발생지역</td>
-					<td colspan="3">광주광역시 북구 00동
-						<div class="mapapi">지도 api</div>
+					<td colspan="3" id="keyword">광주 동구 예술길 31-15 <div class="mapapi" id="map"></div>
 					</td>
 				</tr>
 				<tr class="tableHt">
@@ -69,7 +70,7 @@
 				<tr class="tableHt">
 					<td class="thbg">진행상황</td>
 					<td colspan="3" id="reporttext02">
-					<!--
+						<!--
 						<select name="progress">
 							<option value="">선택</option>
 							<option value="">접수대기</option>
@@ -80,17 +81,17 @@
 					-->
 						<div class="wrapall">
 							<div class="dropdowns">
-								<div class='dropbtn'><a href="#" class='dropbtn'>선택</a></div>
+								<div class='dropbtn'>
+									<a href="#" class='dropbtn'>선택</a>
+								</div>
 								<div id='myDropdown' class='dropdown-content'>
-									<a href="#" class='dropdetails' id='pro01'>접수대기</a> 
-									<a href="#"	class='dropdetails' id='pro02'>접수중</a> 
-									<a href="#"	class='dropdetails' id='pro03'>진행중</a>
-									<a href="#"	class='dropdetails' id='pro04'>진행완료</a>
+									<a href="#" class='dropdetails' id='pro01'>접수대기</a> <a href="#"
+										class='dropdetails' id='pro02'>접수중</a> <a href="#"
+										class='dropdetails' id='pro03'>진행중</a> <a href="#"
+										class='dropdetails' id='pro04'>진행완료</a>
 								</div>
 							</div>
-						</div>
-						<!-- jsp 작업할때 필요시 버튼사용 -->
-						<!-- <button class="search_btn" type="submit" value="submit">저장</button> -->
+						</div> <!-- jsp 작업할때 필요시 버튼사용 --> <!-- <button class="search_btn" type="submit" value="submit">저장</button> -->
 					</td>
 				</tr>
 			</table>
@@ -121,7 +122,45 @@
 	<!-- 드롭바 JS -->
 	<script src="js/reportContent.js"></script>
 
+	<!-- 지도api -->
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=620b44dc9f86c5a784ef0509915b1e7d&libraries=services"></script>
 
+	<script>
+		// 지도 api
+		var keyword = document.getElementById('keyword').innerText;
+		
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			level : 3 // 지도의 확대 레벨
+		};
+
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new kakao.maps.services.Geocoder();
+
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch(keyword, function(result, status) {
+
+			// 정상적으로 검색이 완료됐으면 
+			if (status === kakao.maps.services.Status.OK) {
+				var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+				
+				console.log(status);
+				// 결과값으로 받은 위치를 마커로 표시합니다
+				var marker = new kakao.maps.Marker({
+					map : map,
+					position : coords
+				});
+
+				// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+				map.setCenter(coords);
+			}
+		});
+	</script>
 
 </body>
 </html>
