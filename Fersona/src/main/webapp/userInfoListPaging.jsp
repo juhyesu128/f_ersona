@@ -80,14 +80,14 @@
 				<th>기타</th>						
 			</tr>
 			
-			<c:forEach begin="0" end="10" step="1" varStatus="status">
+			<c:forEach begin="0" end="9" step="1" varStatus="status">
 			<tr class="tableHt">
 				<td id = "mem_id_${status.index}"></td>
 				<td id = "mem_name_${status.index}"></td>
 				<td id = "mem_tel_${status.index}"></td>
 				<td id = "mem_join_${status.index}"></td>
 				<td id = "mem_adr1_${status.index}"></td>
-				<td id = "del_${status.index}">삭제</td>
+				<td id = "del_${status.index}"><a href="#">삭제</a></td>
 			</tr>
 			</c:forEach>
 			<tr>
@@ -99,11 +99,9 @@
 		<!-- 이전 다음 페이지 넘기기 pagination -->
 		<!-- <ul class="pagination pagination-sm justify-content-center">
 			<li id="link" class="page-item"><a class="page-link" href="#">◀</a></li>
-			<li id="link" class="page-item active"><a class="page-link" href="#">1</a></li>
-			페이지 늘리기 버튼
-						<li id="link" class="page-item"><a class="page-link"
-				href="#">2</a></li>
-			<li id="link" class="page-item"><a class="page-link" href="#">3</a></li>
+			<li id="link" class="controller page-item active"><a class="page-link" href="#">1</a></li> 
+			<li id="link" class="controller page-item"><a class="page-link" href="#">2</a></li>
+			<li id="link" class="controller page-item"><a class="page-link" href="#">3</a></li>
 			<li id="link" class="page-item"><a class="page-link" href="#">▶</a></li>
 		</ul> -->
 
