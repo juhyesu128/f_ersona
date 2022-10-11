@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.smhrd.model.MemberDAO">
 
-	<!-- 회원가입 -->
+	<!-- 사원 회원 가입 -->
 	<insert id="insertMember" parameterType="com.smhrd.model.Member">
 		insert into admin_info values((select police_id from police_info
 		where(police_id=#{police_id})), #{admin_pw}, #{admin_phone})
@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from admin_info where police_id=#{police_id}
 	</select>
 	
-
+	<!-- 사원 회원 정보 조회 -->
 	<!-- resultType : 데이터 조회 후 가져올 데이터의 타입, select 할 때만 사용 ex. String -->
 	<select id="selectMember" parameterType="com.smhrd.model.Member"
 		resultType="com.smhrd.model.Member">
@@ -28,25 +28,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		admin_pw=#{admin_pw}
 	</select>
 
-	<!-- 사원정보 조회 -->
+	<!-- 경찰 사원 정보 조회 -->
 	<select id="checkMember" parameterType="com.smhrd.model.Police"
 		resultType="com.smhrd.model.Police">
 		select * from police_info where police_id=#{police_id}
 	</select>
 	
-	<!-- 회원정보 수정 -->
+	<!-- 사원 회원 정보 수정 -->
 	<update id="update" parameterType="com.smhrd.model.Member">
 		update admin_info set admin_pw=#{admin_pw}, admin_phone=#{admin_phone} where police_id=#{police_id}
 	</update>
-	
-	<!-- 회원정보 조회 -->
-	<select id="selectAllMember" resultType="com.smhrd.model.User">
-		select * from mem_info
-	</select>
-	
-	<!-- 회원정보 삭제 -->
-	<delete id="deleteMember" parameterType="String">
-		delete from mem_info where mem_id=#{mem_id}
-	</delete>
 
 </mapper>

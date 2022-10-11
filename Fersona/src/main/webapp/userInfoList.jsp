@@ -1,6 +1,6 @@
+<%@page import="com.smhrd.model.UserDAO"%>
 <%@page import="com.smhrd.model.User"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,9 +32,9 @@
 	<!--navbar 끝-->
 	
 	<%
-		MemberDAO dao = new MemberDAO();
+		UserDAO dao = new UserDAO();
 		List<User> list = dao.selectAllMember();
-		System.out.print(list.size());
+		System.out.println(list.size());
 	%>
 
 	<!-- 대상구분  -->

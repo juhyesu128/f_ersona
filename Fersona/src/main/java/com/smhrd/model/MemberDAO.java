@@ -92,36 +92,36 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	// 회원정보 조회
-	public List<User> selectAllMember() {
-		List<User> list = null;
-		try {
-			list = sqlSession.selectList("com.smhrd.model.MemberDAO.selectAllMember");
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			sqlSession.close();
-		}
-		return list;
-	}
-	
-	// 회원정보 삭제
-	public int deleteMember(String mem_id) {
-		int cnt = 0;
-		try {
-			cnt = sqlSession.delete("com.smhrd.model.MemberDAO.deleteMember",mem_id);
-			if(cnt>0) {
-				sqlSession.commit();
-			}else {
-				sqlSession.rollback();
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			sqlSession.close();
-		}
-		return cnt;
-	}
+//	// 회원정보 조회
+//	public List<User> selectAllMember() {
+//		List<User> list = null;
+//		try {
+//			list = sqlSession.selectList("com.smhrd.model.MemberDAO.selectAllMember");
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			sqlSession.close();
+//		}
+//		return list;
+//	}
+//	
+//	// 회원정보 삭제
+//	public int deleteMember(String mem_id) {
+//		int cnt = 0;
+//		try {
+//			cnt = sqlSession.delete("com.smhrd.model.MemberDAO.deleteMember",mem_id);
+//			if(cnt>0) {
+//				sqlSession.commit();
+//			}else {
+//				sqlSession.rollback();
+//			}
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			sqlSession.close();
+//		}
+//		return cnt;
+//	}
 
 
 	

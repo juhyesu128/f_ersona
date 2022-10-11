@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
+import com.smhrd.model.UserDAO;
 
 public class DeleteCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -17,13 +18,13 @@ public class DeleteCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		HttpSession session = request.getSession();
+//		HttpSession session = request.getSession();
 		
-		Member loginMember = (Member)session.getAttribute("loginMember");
+//		Member loginMember = (Member)session.getAttribute("loginMember");
 		String mem_id = request.getParameter("mem_id");
 		
 		// DAO -> deleteMember() 메소드 사용 _ 매개변수, 반환타입 고려
-		MemberDAO dao = new MemberDAO();
+		UserDAO dao = new UserDAO();
 		int cnt = dao.deleteMember(mem_id);
 
 		

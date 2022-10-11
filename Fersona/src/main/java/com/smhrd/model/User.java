@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +22,6 @@ public class User {
 	private String mem_adr1;
 	private String mem_adr2;
 	private String mem_tel;
+	private BigDecimal num;
 	
 }
