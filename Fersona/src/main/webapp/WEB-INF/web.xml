@@ -52,6 +52,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.userPagingCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>reportPagingCon</servlet-name>
+  	<display-name>reportPagingCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.reportPagingCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -83,5 +89,9 @@
   <servlet-mapping>
   	<servlet-name>userPagingCon</servlet-name>
   	<url-pattern>/userPagingCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>reportPagingCon</servlet-name>
+  	<url-pattern>/reportPagingCon</url-pattern>
   </servlet-mapping>
 </web-app>
