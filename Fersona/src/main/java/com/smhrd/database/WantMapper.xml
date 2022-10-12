@@ -6,5 +6,40 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.smhrd.model.WantDAO">
 
+	<!-- 회원정보 조회 -->
+	<select id="selectMember" resultType="com.smhrd.model.Want">
+		<!-- select * from want_info where want_open like '%' and want_gen like 
+			'%' and rep_cate like '%' and want_id like 'want%' and want_name like '%%' 
+			and want_age like '%' -->
+
+		select * from want_info
+		where want_open like #{want_open} and want_gen
+		like #{want_gen} and rep_cate like #{rep_cate}
+		and want_id like
+		#{want_id} and want_name like #{want_name} and want_age like
+		#{want_age}
+	</select>
+
+	<!-- 내용전부가져오기 -->
+	<select id="selectAllList" resultType="com.smhrd.model.Want">
+		select * from want_info
+	</select>
+
+	<!-- 10개씩 조회 -->
+	<!-- <select id="selectAllListPage" resultType="com.smhrd.model.Want" parameterType="int"> 
+		select * from want_info where num >= #{num} order by num desc </select> -->
+
+	<!-- 10개씩 조회 -->
+	<select id="selectAllListPage" resultType="com.smhrd.model.Want"
+		parameterType="int">
+		select * from want_info having count(want_id) >= #{num}
+		group by want_id, want_name, want_age, want_gen, want_img, rep_cate,
+		admin_adr1, want_open, want_char order by want_id
+	</select>
+
+	<select id="selectOne" parameterType="int"
+		resultType="com.smhrd.model.Want">
+		select * from board where num = #{num}
+	</select>
 
 </mapper>

@@ -74,10 +74,11 @@ tr {
 	vertical-align: middle;
 }
 
-/* Pagination */
+/*  Pagination */
 .pagination a, .pagination button {
 	color: #293241;
 }
+
 
 #link.active .page-link {
 	background-color: #293241;
@@ -148,6 +149,7 @@ input[type=radio]:checked+label {
 	border: 1px solid #a5a5a5;
 	width: 212px;
 	display: inline-block;
+	margin-bottom: 5px;
 }
 
 .face_img_frame {
@@ -158,8 +160,8 @@ input[type=radio]:checked+label {
 }
 
 .face_img {
-	width: 190px;
-	height: 190px;
+	width: 200px;
+	height: 200px;
 }
 
 .wantedlist_btn {
