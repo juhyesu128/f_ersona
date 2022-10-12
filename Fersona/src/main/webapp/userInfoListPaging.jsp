@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
 	<!--navbar-->
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
-
+	
 	<!-- 대상구분  -->
 	<div class="contain">
 		<div class="contain_main">
@@ -87,7 +88,7 @@
 				<td id = "mem_tel_${status.index}"></td>
 				<td id = "mem_join_${status.index}"></td>
 				<td id = "mem_adr1_${status.index}"></td>
-				<td id = "del_${status.index}"><a href="#">삭제</a></td>
+				<td id = "del_${status.index}"></td>
 			</tr>
 			</c:forEach>
 			<tr>
@@ -190,6 +191,8 @@ function list_write(data_list){
 		$('#mem_tel_'+i).text(data_list[i].mem_tel);
 		$('#mem_join_'+i).text(data_list[i].mem_join);
 		$('#mem_adr1_'+i).text(data_list[i].mem_adr1);
+		$('#del_'+i).html('<a href="DeleteCon?mem_id='+data_list[i].mem_id+'">삭제</a>')
+		
 		
 	}
 	
@@ -265,11 +268,13 @@ function print_list(data_list){
 		$('#mem_adr1_'+i).show();
 		$('#del_'+i).show();
 		
+		
 		$('#mem_id_'+i).text(data_list[i].mem_id);
 		$('#mem_name_'+i).text(data_list[i].mem_name);
 		$('#mem_tel_'+i).text(data_list[i].mem_tel);
 		$('#mem_join_'+i).text(data_list[i].mem_join);
 		$('#mem_adr1_'+i).text(data_list[i].mem_adr1);
+		$('#del_'+i).html('<a href="DeleteCon?mem_id='+data_list[i].mem_id+'">삭제</a>');
 		
 	}
 }

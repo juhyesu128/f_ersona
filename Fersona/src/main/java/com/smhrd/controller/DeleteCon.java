@@ -17,27 +17,23 @@ public class DeleteCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-		
-//		HttpSession session = request.getSession();
-		
-//		Member loginMember = (Member)session.getAttribute("loginMember");
+
 		String mem_id = request.getParameter("mem_id");
+		System.out.println("멤버아이디" + mem_id);
 		
 		// DAO -> deleteMember() 메소드 사용 _ 매개변수, 반환타입 고려
 		UserDAO dao = new UserDAO();
 		int cnt = dao.deleteMember(mem_id);
-
+		System.out.println("cnt" + cnt);
 		
 		if(cnt>0) { // 삭제 성공
 			System.out.println("삭제 성공😊😊");
-//			session.removeAttribute("loginMember");
-			response.sendRedirect("userInfoList.jsp");
+			response.sendRedirect("userInfoListPaging.jsp");
 		}else { // 삭제 실패
 			System.out.println("삭제 실패😥😥");
-			response.sendRedirect("userInfoList.jsp");
+			response.sendRedirect("userInfoListPaging.jsp");
+		
 		}
-		
-		
 		
 	}
 

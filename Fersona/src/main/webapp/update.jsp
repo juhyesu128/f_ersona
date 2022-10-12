@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.Member"%>
@@ -23,6 +24,11 @@
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
+<style>
+	#table{
+	width:500px;
+	}
+</style>
 </head>
 <body>
 	<!-- navbar -->
@@ -30,52 +36,50 @@
 	<!--navbar 끝-->
 
 	<% 
-		Member loginMember = (Member)session.getAttribute("loginMember"); 
+		Member loginMember = (Member)session.getAttribute("loginMember");
+		Police vo = new Police(loginMember.getPolice_id());
+		MemberDAO dao = new MemberDAO();
+		Police checkMember = dao.checkMember(vo);
 	%>
 	
 	
 	<div class="contain">
-		<form action="JoinCon" method="post">
+		<form action="UpdateCon" method="post">
 			<p id="tit">개인정보수정</p>
 			<div class="updateinfo">※ 관할지/근무부서 변경은 관할담당자님께 요청바랍니다.</div>
-			<table>
+			<table id="table">
 				<tr>
 					<td class="text">사원번호</td>
-					<td colspan="2"><span class="noupdate" name="police_id"><%=loginMember.getPolice_id() %></span></td>
+					<td colspan="3"><span class="noupdate" name="police_id" value="<%=checkMember.getPolice_id()%>"><%=checkMember.getPolice_id() %></span></td>
 				</tr>
 				<tr>
 					<td class="text">비밀번호</td>
-					<td colspan="2"><input type="password" name="admin_pw" id="pswd1" onchange="check_pw()" placeholder="변경할 비밀번호를 입력해주세요"></td>
+					<td colspan="3"><input type="password" name="admin_pw" id="pswd1" onchange="check_pw()" placeholder="변경할 비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<td class="text">비밀번호 확인</td>
-					<td colspan="2"><input type="password" name="pswd2" id="pswd2" onchange="check_pw()" placeholder="위와 동일한 비밀번호를 입력해주세요"></td>
+					<td colspan="3"><input type="password" name="pswd2" id="pswd2" onchange="check_pw()" placeholder="위와 동일한 비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<td class="text">이름</td>
-					<td colspan="2"><span class="noupdate">관리자</span></td>
+					<td colspan="3"><span class="noupdate"><%=checkMember.getPolice_name() %></span></td>
 				</tr>
 				<tr id="fontwhite">
 					<td class="text"></td>
-					<td colspan="2">'-'를 빼고 숫자만 입력해주세요</td>
+					<td colspan="3">'-'를 빼고 숫자만 입력해주세요</td>
 				</tr>
 				<tr>
 					<td class="text">핸드폰 번호</td>
-					<td><input type="text" name="admin_phone" placeholder="핸드폰 번호를 입력"></td>
-					<td><input type="submit" name="phone_check" id="phone_check" value="인증번호 요청"></td>
+					<td colspan="3"><input type="text" name="admin_phone" placeholder="핸드폰 번호를 입력"></td>
 				</tr>
-				<tr>
-					<td class="text"></td>
-					<td><input type="text" name="codenum" placeholder="인증번호 입력"></td>
-					<td><input type="submit" name="codenum_check" value="확인"></td>
-				</tr>
+			
 				<tr>
 					<td class="text">관할지역</td>
-					<td colspan="2"><span class="noupdate">광주광역시</span></td>
+					<td colspan="3"><span class="noupdate"><%=checkMember.getPolice_adr1() %></span></td>
 				</tr>
 				<tr>
 					<td class="text">관할관서</td>
-					<td colspan="2"><span class="noupdate">북구경찰서</span></td>
+					<td colspan="3"><span class="noupdate"><%=checkMember.getPolice_adr2() %></span></td>
 				</tr>
 			</table>
 			<!-- <button type="submit" value="join">회원가입</button> -->

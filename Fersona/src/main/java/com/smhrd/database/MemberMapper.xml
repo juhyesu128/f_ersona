@@ -38,5 +38,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update" parameterType="com.smhrd.model.Member">
 		update admin_info set admin_pw=#{admin_pw}, admin_phone=#{admin_phone} where police_id=#{police_id}
 	</update>
+	
 
 </mapper>
