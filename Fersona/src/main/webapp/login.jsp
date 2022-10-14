@@ -20,7 +20,7 @@
 
 	<div class="container">
 		<!-- Logo 시작 -->
-		<img class="logo" src="./imgs/Logo_01.jpg">
+		<img class="logo" src="./imgs/Logo_00.jpg">
 		<!-- Logo 끝 -->
 
 		<form action="LoginCon" method="post">
