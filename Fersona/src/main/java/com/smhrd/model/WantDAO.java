@@ -55,5 +55,71 @@ public class WantDAO {
 		return list;
 	}
 	
+	public Want selectOne(String want_id) {
+		Want vo = null;
+		try {
+			vo = sqlSession.selectOne("com.smhrd.model.WantDAO.selectOne", want_id);
+			// select - commit/rollback 생략
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return vo;
+	}
 	
+	// 등록하기
+		public int insertWant(Want vo) {
+			int cnt = 0;
+			try {
+				cnt = sqlSession.insert("com.smhrd.model.WantDAO.insertWant", vo);
+				if (cnt > 0) {
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}
+		
+		// 업데이트
+		public int updateWant(Want vo) {
+			int cnt = 0;
+			try {
+				cnt = sqlSession.update("com.smhrd.model.WantDAO.updateWant", vo);
+				if (cnt > 0) {
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}
+		
+		// 정보 삭제
+		public int deleteWant(String want_id) {
+			int cnt = 0;
+			try {
+				cnt = sqlSession.delete("com.smhrd.model.WantDAO.deleteWant", want_id);
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}
+		
 }

@@ -91,11 +91,10 @@
 		</form>
 
 		<!-- -----수배자 정보----- -->
-		<c:forEach begin="0" end="14" step="1" varStatus="status">
+		<c:forEach begin="0" end="39" step="1" varStatus="status">
 			<div class="wantedborder">
 				<div id="want_img${status.index}" class="face_img_frame">
-					<!--<img class="face_img" src="./imgs/face/${data_list[i].want_img}.jpg" alt="첨부파일"> -->
-					<img class="face_img" src="./imgs/face/wantedimg1.jpg" alt="첨부파일">
+					<!-- <img class="face_img" src="./imgs/face/wantedimg1.jpg" alt="첨부파일"> -->
 				</div>
 				<table>
 					<tr>
@@ -114,10 +113,11 @@
 						</td>
 					</tr>
 					<tr>
-						<td><button class="List_btn" type="button"
-								onclick="location.href='faceUpdate.jsp'">수정하기</button>
 						<td>
-							<button class="wantedlist_btn" type="button">공개수배</button>
+							<div class="List_btn" id="faceUpdate${status.index}" style="cursor: pointer;">수정하기</div> 
+						<td>
+							<button class="wantedlist_btn" type="button"
+								id="want_open${status.index}">공개수배</button>
 					</tr>
 				</table>
 
@@ -127,17 +127,19 @@
 		<ul class="pagination pagination-sm justify-content-center"
 			style="margin-top: 30px;">
 			<li id="link" class="page-item"><a class="page-link" href="#">◀</a></li>
-			<li id="link" class="page-item active"><a class="page-link" href="#">1</a></li>
-			<li id="link" class="page-item"><a class="page-link"
-				href="#">2</a></li>
-			<li id="link" class="page-item"><a class="page-link" href="#">3</a></li>
+			<li id="link" class="page-item active"><a class="page-link"
+				href="#">1</a></li>
+			<!-- <li id="link" class="page-item"><a class="page-link" href="#">2</a></li>
+			<li id="link" class="page-item"><a class="page-link" href="#">3</a></li> -->
 			<li id="link" class="page-item"><a class="page-link" href="#">▶</a></li>
 		</ul>
 
 		<!-- 반복작성 -->
 
 		<!-- 페이징 -->
-		<div id="controller"></div>
+		<!-- <div id="controller"></div> -->
+
+
 		<!-- 수배자 정보 end -->
 	</div>
 
@@ -148,12 +150,13 @@
 	<script src="js/faceInfoList.js"></script>
 
 	<script type="text/javascript">
+		/* 리스트 출력 */
 		// 메소드 호출 next_list(startRow, StartPage)
 		next_list(1, 1);
 
 		var arr = null;
-		var pageSize = 5;
-		var maxRow = 15;
+		var pageSize = 3;
+		var maxRow = 40;
 
 		function button_create(data_list, startPage) {
 
@@ -177,23 +180,7 @@
 								+ currentPage + '</button>');
 				currentPage = currentPage + 1;
 			}
-			
-			
-/* 			<ul class="pagination pagination-sm justify-content-center"
-				<li id="link" class="page-item"><a class="page-link" href="#">◀</a></li>
-				<li id="link" class="page-item"><a class="page-link" href="#">1</a></li>
-				<li id="link" class="page-item active"><a class="page-link"
-					href="#">2</a></li>
-				<li id="link" class="page-item"><a class="page-link" href="#">3</a></li>
-				<li id="link" class="page-item"><a class="page-link" href="#">▶</a></li>
-			</ul> */
-			
-			
-			
-			
-			
-			
-			
+
 		}
 
 		//다음 버튼이 눌린다면 그에 맞는 버튼들이 생성, 삭제 와 해당 리스트가 출력되기 위한 메소드 
@@ -209,7 +196,7 @@
 				success : function(data_list) {
 					console.log("성공")
 					console.log(data_list)
-					if (data_list.length < 15) {/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
+					if (data_list.length < 40) {/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
 						list_write(data_list);
 						button_create(data_list, startPage);
 					} else {
@@ -238,13 +225,17 @@
 						data_list[i].want_name + ' (' + data_list[i].want_age
 								+ ', ' + data_list[i].want_gen + ')');
 				$('#rep_cate' + i).text(data_list[i].rep_cate);
+				$('#faceUpdate' + i).html(
+						"<a href='faceUpdateCon?want_id="
+								+ data_list[i].want_id + "'>수정하기</a>");
 			}
 
-			for (var i = data_list.length; i < 15; i++) {//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
+			for (var i = data_list.length; i < 40; i++) {//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
 				$('#want_img' + i).hide();
 				$('#want_id' + i).hide();
 				$('#want_name' + i).hide();
 				$('#rep_cate' + i).hide();
+				$('#faceUpdate' + i).hide();
 			}
 
 		}
@@ -255,8 +246,8 @@
 		//--->한 페이지 가 가지고 있는 배열안에서 그때그때 해당페이지 블럭을 클릭 한다면 거기 범위에 맞는 데이터를 가져오기 위해 슬라이싱 해줄 필요가 있다
 		function page(currentPage) {
 
-			var startNum = (currentPage - 1) * 15 + 1;
-			var endNum = currentPage * 15;
+			var startNum = (currentPage - 1) * 40 + 1;
+			var endNum = currentPage * 40;
 
 			var start_index = 0;
 			var end_index = 0;
@@ -298,11 +289,13 @@
 
 		//해당 게시물을 출력한다
 		function print_list(data_list) {
-			for (var i = 0; i < 15; i++) {
+			for (var i = 0; i < 40; i++) {
 				$('#want_img' + i).show();
 				$('#want_id' + i).show();
 				$('#want_name' + i).show();
 				$('#rep_cate' + i).show();
+				$('#want_open' + i).show();
+				$('#faceUpdate' + i).show();
 
 				$('#want_img' + i)
 						.html(
@@ -312,12 +305,27 @@
 						data_list[i].want_name + ' (' + data_list[i].want_age
 								+ ', ' + data_list[i].want_gen + ')');
 				$('#rep_cate' + i).text(data_list[i].rep_cate);
+				if ((data_list[i].want_open) == '공개') {
+					$('#want_open' + i).attr('class', 'nowantedlist_btn');
+				}
+				$('#faceUpdate' + i).html(
+						"<a href='faceUpdateCon?want_id="
+								+ data_list[i].want_id + "' class=\"a_btn\"><p>수정하기</p></a>");
 			}
-
 		}
+
+		/* 공개수배 버튼클릭시 색상유지 */
+		/* $(document).on('click', '.wantedlist_btn', function() {
+		$(this).attr('class', 'nowantedlist_btn')
+		})
+
+		$(document).on('click', '.nowantedlist_btn', function() {
+		$(this).attr('class', 'wantedlist_btn')
+		})  */
+
+		/* 공개수배 버튼클릭시 색상유지 end */
 	</script>
-
-
-
 </body>
+
+
 </html>

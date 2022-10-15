@@ -64,6 +64,30 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.reportPagingCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>faceUpdateCon</servlet-name>
+		<display-name>faceUpdateCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.faceUpdateCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>faceAddCon</servlet-name>
+		<display-name>faceAddCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.faceAddCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>faceUpdate2Con</servlet-name>
+		<display-name>faceUpdate2Con</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.faceUpdate2Con</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>wantDeleteCon</servlet-name>
+		<display-name>wantDeleteCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.wantDeleteCon</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>JoinCon</servlet-name>
 		<url-pattern>/JoinCon</url-pattern>
@@ -103,5 +127,21 @@
 	<servlet-mapping>
 		<servlet-name>faceInfoCon</servlet-name>
 		<url-pattern>/faceInfoCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>faceUpdateCon</servlet-name>
+		<url-pattern>/faceUpdateCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>faceAddCon</servlet-name>
+		<url-pattern>/faceAddCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>faceUpdate2Con</servlet-name>
+		<url-pattern>/faceUpdate2Con</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>wantDeleteCon</servlet-name>
+		<url-pattern>/wantDeleteCon</url-pattern>
 	</servlet-mapping>
 </web-app>

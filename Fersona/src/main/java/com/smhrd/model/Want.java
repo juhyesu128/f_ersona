@@ -1,6 +1,5 @@
 package com.smhrd.model;
 
-import java.math.BigDecimal;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor // 모든 파라미터 받는 생성자
 public class Want {
 
+	private int num;
 	@NonNull
 	private String want_id;
 	private String want_name;
@@ -24,8 +24,6 @@ public class Want {
 	private String admin_adr1;
 	private String want_open;
 	private String want_char;
-	
-	private BigDecimal num;
 
 	
 	public Want(@NonNull String want_id, String want_name, String want_age, String want_gen, String rep_cate,
@@ -37,6 +35,20 @@ public class Want {
 		this.rep_cate = rep_cate;
 		this.want_open = want_open;
 	}
+
+
+	public Want(@NonNull String want_id, String want_name, String want_age, String want_gen, String rep_cate, String want_open, String want_char) {
+		this.want_id = want_id;
+		this.want_name = want_name;
+		this.want_age = want_age;
+		this.want_gen = want_gen;
+		this.rep_cate = rep_cate;
+		this.want_open = want_open;
+		this.want_char = want_char;
+	}
+
+	
+	
 	
 
 }

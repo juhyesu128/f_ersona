@@ -8,7 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -78,6 +77,7 @@ public class faceInfoCon extends HttpServlet {
 			json.addProperty("admin_adr1", w.getAdmin_adr1());
 			json.addProperty("want_open", w.getWant_open());
 			json.addProperty("want_char", w.getWant_char());
+			json.addProperty("num", w.getNum());
 
 			jarray.add(json);
 			json = new JsonObject();

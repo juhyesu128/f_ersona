@@ -79,7 +79,6 @@ tr {
 	color: #293241;
 }
 
-
 #link.active .page-link {
 	background-color: #293241;
 	border-color: #293241;
@@ -124,7 +123,12 @@ input[type=radio]:checked+label {
 	color: bold;
 	transition: all 0.2s;
 	background: #d8d5d5;
+	text-align: center;
+}
+
+.a_btn {
 	position: relative;
+	text-align: center;
 }
 /* 등록하기 */
 .contain_btn {
@@ -189,7 +193,6 @@ input[type=radio]:checked+label {
 /* .wantedlist_btn:active {
 	background-color: red;
 } */
-
 .contain_main {
 	display: flex;
 	justify-content: space-between;
@@ -219,7 +222,6 @@ input[type=radio]:checked+label {
 }
 
 /* 초기화/ 검색 버튼 */
-
 #search_margin {
 	margin-bottom: 50px;
 }
@@ -253,5 +255,6 @@ input[type=radio]:checked+label {
 }
 
 caption {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
