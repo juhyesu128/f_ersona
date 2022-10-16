@@ -70,7 +70,7 @@
 		</form>
 
 		<!-- 리스트 -->
-		<p id="totalLeft">총 24건이 검색되었습니다.</p>
+<!-- 		<p id="totalLeft">총 24건이 검색되었습니다.</p> -->
 		<table class="table">
 			<tr id="th" class="tableHt">
 				<th>ID</th>
