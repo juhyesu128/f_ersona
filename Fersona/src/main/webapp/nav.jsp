@@ -39,7 +39,7 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link"
 						href="faceInfoList.jsp">수배자 정보</a></li>
-					<li class="nav-item"><a class="nav-link" href="reportList.jsp">제보/신고조회</a></li>
+					<li class="nav-item"><a class="nav-link" href="reportListPaging.jsp">제보/신고조회</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="userInfoList.jsp">회원정보</a>
 					<li>

@@ -81,6 +81,7 @@
 		<p id="totalLeft">총 <%=list.size()%>건이 검색되었습니다.</p>
 		<table class="table">
 			<tr id="th" class="tableHt">
+				<th>NO</th>
 				<th>ID</th>
 				<th>이름</th>
 				<th>핸드폰 번호</th>
@@ -93,19 +94,20 @@
 			<%for(int i=0; i<list.size(); i++){ %>
 			<tr class="tableHt">
 				<%-- <td class = "table01"><input type='checkbox' name='deletes' id="check<%=i%>" /></td> --%>
-				<td class = "table02"><%=list.get(i).getMem_id() %></td>
-				<td class = "table03"><%=list.get(i).getMem_name()%></td>
-				<td class = "table04"><%=list.get(i).getMem_tel() %></td>
-				<td class = "table05"><%=list.get(i).getMem_join() %></td>
-				<td class = "table07"><%=list.get(i).getMem_adr1() + " " + list.get(i).getMem_adr2() %></td>
-				<td class = "table01"><a href="DeleteCon?mem_id=<%=list.get(i).getMem_id()%>">삭제</a></td>
+				<td class = "table00"><%=i+1 %></td>
+				<td class = "table01"><%=list.get(i).getMem_id() %></td>
+				<td class = "table02"><%=list.get(i).getMem_name()%></td>
+				<td class = "table03"><%=list.get(i).getMem_tel() %></td>
+				<td class = "table04"><%=list.get(i).getMem_join() %></td>
+				<td class = "table05"><%=list.get(i).getMem_adr1() + " " + list.get(i).getMem_adr2() %></td>
+				<td class = "table06"><a href="DeleteCon?mem_id=<%=list.get(i).getMem_id()%>">삭제</a></td>
 			</tr>
 			<%} %>
 		</table>
 		
-		<div id="dele">
+		<!-- <div id="dele">
 			<input class="wantedlist" type="submit" value="삭제하기">
-		</div>
+		</div> -->
 
 		<!-- 이전 다음 페이지 넘기기 pagination -->
 		<ul class="pagination pagination-sm justify-content-center">

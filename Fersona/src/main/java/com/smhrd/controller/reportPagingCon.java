@@ -29,13 +29,14 @@ public class reportPagingCon extends HttpServlet {
 		JsonArray jarray = new JsonArray();  // json array
 		
 		for(Report r:list) {
-			json.addProperty("rep_no", r.getRep_no());
+			json.addProperty("num", r.getNum());
 			json.addProperty("rep_cate", r.getRep_cate());
 			json.addProperty("rep_con", r.getRep_con());
 			json.addProperty("rep_date", r.getRep_date());
 			json.addProperty("rep_time", r.getRep_time());
 			json.addProperty("mem_id", r.getMem_id());
 			json.addProperty("rep_adr", r.getRep_adr());
+			json.addProperty("mon_id", r.getMon_id());
 			json.addProperty("want_id", r.getWant_id());
 			json.addProperty("rep_pro", r.getRep_pro());
 			json.addProperty("rep_wri", r.getRep_wri());

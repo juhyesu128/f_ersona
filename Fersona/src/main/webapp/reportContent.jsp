@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Report"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +26,12 @@
 
 </head>
 <body>
+	<%
+	//session 값 가지고 오기
+	Report list = (Report) session.getAttribute("list");
+	Report updatePro = (Report) session.getAttribute("updatePro");
+	%>
+
 	<!-- navbar -->
 	<%@include file="nav.jsp"%>
 	<!--navbar 끝-->
@@ -32,40 +39,48 @@
 
 	<div class="contain">
 		<form action="reportContentCon" method="post">
+			<%
+			if (list != null) {
+			%>
 			<table class="table">
 				<caption></caption>
 				<tr class="tableHt">
 					<td class="thbg">신고유형</td>
-					<td>사기</td>
+					<td><%=list.getRep_cate()%></td>
 					<td class="thbg">등록일</td>
-					<td>2022.08.01</td>
+					<td><%=list.getRep_wri()%></td>
 				</tr>
 
 				<tr class="tableHt">
 					<td class="thbg">사건발생일자</td>
-					<td>2022.08.01</td>
+					<td><%=list.getRep_date()%></td>
 					<td class="thbg">사건발생시간</td>
-					<td>19:00</td>
+					<td><%=list.getRep_time()%></td>
 				</tr>
 
 				<tr class="tableHt">
 					<td class="thbg">신고내용</td>
-					<td id="reporttext" colspan="3">길거리에서 사기치는 모습을 목격하여 신고합니다.</td>
+					<td id="reporttext" colspan="3"><%=list.getRep_con()%></td>
 				</tr>
 				<tr class="tableHt">
 					<td class="thbg">사건발생지역</td>
-					<td colspan="3" id="keyword">광주 동구 예술길 31-15 <div class="mapapi" id="map"></div>
-					</td>
+					<td colspan="3" id="keyword"><%=list.getRep_adr()%>
+						<div class="mapapi" id="map"></div></td>
 				</tr>
 				<tr class="tableHt">
 					<td class="thbg">사진 여부</td>
 					<td colspan="3"><img class="imgcss" src="./imgs/gallery.png"
-						alt="첨부파일">Kakaotalk01.jpg</td>
+						alt="첨부파일">첨부파일이 없습니다.<!-- Kakaotalk01.jpg --></td>
 				</tr>
 				<tr class="tableHt">
 					<td class="thbg">몽타주 여부</td>
-					<td colspan="3"><img class="imgcss" src="./imgs/gallery.png"
-						alt="몽타주이미지">눈이 매우 크고 쌍꺼풀이 있다</td>
+					<td colspan="3"><img class="imgcss"
+						src="./imgs/<%=list.getMon_img()%>.jpg"
+						<%if (list.getMon_img() ==null){ %>
+						alt="첨부파일이 없습니다."></td>
+						<%} else{%>
+						alt="<%=list.getMon_img()%>.jpg"> <br><%=list.getMon_char()%></td>
+						<%} %>
 				</tr>
 				<tr class="tableHt">
 					<td class="thbg">진행상황</td>
@@ -81,20 +96,136 @@
 					-->
 						<div class="wrapall">
 							<div class="dropdowns">
-								<div class='dropbtn'>
-									<a href="#" class='dropbtn'>선택</a>
-								</div>
-								<div id='myDropdown' class='dropdown-content'>
-									<a href="#" class='dropdetails' id='pro01'>접수대기</a> <a href="#"
-										class='dropdetails' id='pro02'>접수중</a> <a href="#"
-										class='dropdetails' id='pro03'>진행중</a> <a href="#"
-										class='dropdetails' id='pro04'>진행완료</a>
-								</div>
+								<%
+								if (updatePro == null) {
+									switch (list.getRep_pro()) {
+										case "접수대기" :
+								%>
+								<div class='dropbtn'>접수대기</div>
 							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "접수중" :
+								%>
+								<div class='dropbtn'>접수중</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "진행중" :
+								%>
+								<div class='dropbtn'>진행중</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "진행완료" :
+								%>
+								<div class='dropbtn'>진행완료</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								}
+								} else if (updatePro != null) {
+								switch (updatePro.getRep_pro()) {
+								case "접수대기" :
+								%>
+								<div class='dropbtn'>접수대기</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "접수중" :
+								%>
+								<div class='dropbtn'>접수중</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "진행중" :
+								%>
+								<div class='dropbtn'>진행중</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								case "진행완료" :
+								%>
+								<div class='dropbtn'>진행완료</div>
+							</div>
+							<div id='myDropdown' class='dropdown-content'>
+								<a href='reportProCon?rep_pro=접수대기' class='dropdetails'
+									id='pro01' name='rep_pro'>접수대기</a> <a
+									href='reportProCon?rep_pro=접수중' class='dropdetails' id='pro02'
+									name='rep_pro'>접수중</a> <a href='reportProCon?rep_pro=진행중'
+									class='dropdetails' id='pro03' name='rep_pro'>진행중</a> <a
+									href='reportProCon?rep_pro=진행완료' class='dropdetails' id='pro04'
+									name='rep_pro'>진행완료</a>
+								<%
+								break;
+								}
+								}
+								%>
+							</div>
+						</div>
 						</div> <!-- jsp 작업할때 필요시 버튼사용 --> <!-- <button class="search_btn" type="submit" value="submit">저장</button> -->
 					</td>
 				</tr>
 			</table>
+			<%
+			}
+			%>
 		</form>
 
 		<p class="tit">인적사항</p>
@@ -104,7 +235,7 @@
 				<td class="thbg">구분</td>
 				<td>개인</td>
 				<td class="thbg">작성자 ID</td>
-				<td>user123</td>
+				<td><%=list.getMem_id()%></td>
 			</tr>
 		</table>
 	</div>
@@ -129,11 +260,12 @@
 	<script>
 		// 지도 api
 		var keyword = document.getElementById('keyword').innerText;
-		
+
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 3 // 지도의 확대 레벨
+			level : 3
+		// 지도의 확대 레벨
 		};
 
 		// 지도를 생성합니다    
@@ -148,7 +280,7 @@
 			// 정상적으로 검색이 완료됐으면 
 			if (status === kakao.maps.services.Status.OK) {
 				var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-				
+
 				console.log(status);
 				// 결과값으로 받은 위치를 마커로 표시합니다
 				var marker = new kakao.maps.Marker({

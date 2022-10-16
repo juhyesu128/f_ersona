@@ -258,26 +258,26 @@ caption {
 	background-color: #FDFAE8;
 }
 
+.table00{
+	width : 10%;
+}
 .table01{
-	width : 5%;
+	width : 12%;
 }
 .table02{
-	width : 15%;
+	width : 12%;
 }
 .table03{
-	width : 15%;
+	width : 18%;
 }
 .table04{
-	width : 15%;
+	width : 18%;
 }
 .table05{
-	width : 15%;
+	width : 20%;
 }
 .table06{
-	width :20%;
-}
-.table07{
-	width : 15%;
+	width :10%;
 }
 
 /* Pagination */

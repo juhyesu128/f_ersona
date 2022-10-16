@@ -34,7 +34,7 @@
 					<input type="password" name="pw" placeholder="비밀번호를 입력해주세요">
 				</div>
 				<div>
-					<input type="submit" value="로그인">
+					<input type="submit" style="cursor: pointer;" value="로그인">
 					<p>
 						<a href="join.jsp"> 회원가입</a>
 					</p>

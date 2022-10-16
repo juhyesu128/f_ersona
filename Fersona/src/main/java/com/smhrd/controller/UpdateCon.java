@@ -37,7 +37,7 @@ public class UpdateCon extends HttpServlet {
 		// 3. 수정이 되었으면 콘솔창에 "수정 성공", 수정이 안됐으면 "수정 실패" 출력
 		if(cnt>0) { // 수정 성공
 			System.out.println("수정 완");
-			session.setAttribute("loginMember", updateMember);
+			session.setAttribute("updateMember", updateMember);
 			
 			// 4-1. 수정 성공하면 main.jsp 이동
 			response.sendRedirect("main.jsp");
