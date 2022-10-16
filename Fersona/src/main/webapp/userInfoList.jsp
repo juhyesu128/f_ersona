@@ -112,8 +112,7 @@
 			<li id="link" class="page-item"><a class="page-link" href="#">◀</a></li>
 			<li id="link" class="page-item active"><a class="page-link" href="#">1</a></li>
 			<!-- 페이지 늘리기 버튼 -->
-			<!-- 			<li id="link" class="page-item"><a class="page-link"
-				href="#">2</a></li>
+			<!-- <li id="link" class="page-item"><a class="page-link" href="#">2</a></li>
 			<li id="link" class="page-item"><a class="page-link" href="#">3</a></li> -->
 			<li id="link" class="page-item"><a class="page-link" href="#">▶</a></li>
 		</ul>
