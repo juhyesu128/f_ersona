@@ -113,13 +113,14 @@
 		</table>
 
 		<!-- 이전 다음 페이지 넘기기 pagination -->
-		<!-- <ul class="pagination pagination-sm justify-content-center">
+		 <ul class="pagination pagination-sm justify-content-center" style="margin-top : 30px;">
 			<li id = "link" class="page-item"><a class="page-link" href="#">◀</a></li>
 			<li id = "link" class="page-item active"><a class="page-link" href="#">1</a></li>
-			<li id = "link" class="page-item"><a class="page-link" href="#">2</a></li>
+			<!-- <li id = "link" class="page-item"><a class="page-link" href="#">2</a></li>
 			<li id = "link" class="page-item"><a class="page-link" href="#">3</a></li>
+			 -->
 			<li id = "link" class="page-item"><a class="page-link" href="#">▶</a></li>
-		</ul> -->
+		</ul>
 	</div>
 
 	<!-- footer -->
