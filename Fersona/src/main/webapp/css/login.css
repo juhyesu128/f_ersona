@@ -6,24 +6,31 @@ body {
 }
 
 .container {
-/* 	
+	/* 	
 	flex-direction: column;
 	width: 500px;
 	margin: 10vh auto;
 	background: transparent; */
 	align-items: center;
 	text-align: center;
-	
 	/* 반응형으로 가운데정렬 */
 	position: absolute;
 	left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
+
 
 .logo {
 	width: 180px;
 	margin-bottom: 50px;
+}
+
+.logo1 {
+	width: 70px;
+	display: block;
+	margin: auto auto 20px auto;
+	align-items: center;
 }
 
 input {

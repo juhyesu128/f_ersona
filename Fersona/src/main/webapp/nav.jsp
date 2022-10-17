@@ -26,7 +26,8 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container px-lg-5">
-			<a href="main.jsp"><img src="./imgs/logo.jpg" width="200"></a>
+			<a href="main.jsp">
+			<img class="logo1" src="./imgs/face_logo.png" width="30px"><span>  </span><img src="./imgs/logo.jpg" width="200px"></a>
 			<!-- 줄였을때 햄버거 -->
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

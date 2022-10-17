@@ -19,7 +19,7 @@
 	%>
 
 	<div class="container">
-		<!-- Logo 시작 -->
+		<img class="logo1" src="./imgs/face_logo.png">
 		<img class="logo" src="./imgs/Logo_00.jpg">
 		<!-- Logo 끝 -->
 

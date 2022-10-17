@@ -94,12 +94,12 @@ tr {
 
 /* img 구간 */
 .faceimags_p {
-	color: black;
+ 	color: black;
 	align-items: center;
 	font-weight: 200px;
 	font-size: 18px;
 	margin: 0px;
-	padding-top: 140px;
+	padding-top: 140px; 
 }
 
 .facemain {
@@ -146,22 +146,28 @@ align-items: center; */
 	height: 100%;
 	position: absolute;
 	object-fit: cover;
+	display: flex;
 }
 
 /* 이미지업로드 사진 */
 .faceimags2 {
-	top: 75px;
+	/*top: 75px;
 	left: 80px;
 	width: 50%;
 	height: 50%;
 	position: absolute;
 	object-fit: cover;
-	display: none;
+	display: none; */
+	position : relative;
+	display: block;
+	margin: auto;
+	align-items: center;
+	object-fit: cover;
 }
 
-.imgspace:hover .faceimags2 {
+/* .imgspace:hover .faceimags2 {
 	display: block;
-}
+} */
 
 .list {
 	margin-bottom: 680px;
