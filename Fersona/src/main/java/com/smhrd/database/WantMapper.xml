@@ -30,11 +30,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from want_info where num >= #{num} order by num desc </select> -->
 
 	<!-- 10개씩 조회 -->
+	<!-- <select id="selectAllListPage" resultType="com.smhrd.model.Want" parameterType="int"> 
+		select * from want_info having count(want_id) >= #{num} group by want_id, 
+		want_name, want_age, want_gen, want_img, rep_cate, admin_adr1, want_open, 
+		want_char, num order by num </select> -->
+
 	<select id="selectAllListPage" resultType="com.smhrd.model.Want"
 		parameterType="int">
-		select * from want_info having count(want_id) >= #{num}
-		group by want_id, want_name, want_age, want_gen, want_img, rep_cate,
-		admin_adr1, want_open, want_char, num order by num
+		select * from want_info where num >= #{num} order by num
 	</select>
 
 	<select id="selectOne" parameterType="String"
@@ -46,8 +49,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 등록하기 -->
 	<insert id="insertWant" parameterType="com.smhrd.model.Want">
 
-		insert into want_info values(#{num}, #{want_id}, #{want_name}, #{want_age},
-		#{want_gen}, #{want_img}, #{rep_cate}, #{admin_adr1}, #{want_open},
+		insert into want_info
+		values(#{num}, #{want_id}, #{want_name}, #{want_age},
+		#{want_gen},
+		#{want_img}, #{rep_cate}, #{admin_adr1}, #{want_open},
 		#{want_char})
 	</insert>
 

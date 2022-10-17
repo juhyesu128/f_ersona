@@ -91,8 +91,8 @@
 		</form>
 
 		<!-- -----수배자 정보----- -->
-		<c:forEach begin="0" end="39" step="1" varStatus="status">
-			<div class="wantedborder">
+		<c:forEach begin="0" end="49" step="1" varStatus="status">
+			<div class="wantedborder" id="list_add${status.index}">
 				<div id="want_img${status.index}" class="face_img_frame">
 					<!-- <img class="face_img" src="./imgs/face/wantedimg1.jpg" alt="첨부파일"> -->
 				</div>
@@ -114,7 +114,8 @@
 					</tr>
 					<tr>
 						<td>
-							<div class="List_btn" id="faceUpdate${status.index}" style="cursor: pointer;">수정하기</div> 
+							<div class="List_btn" id="faceUpdate${status.index}"
+								style="cursor: pointer;">수정하기</div>
 						<td>
 							<button class="wantedlist_btn" type="button"
 								id="want_open${status.index}">공개수배</button>
@@ -156,7 +157,7 @@
 
 		var arr = null;
 		var pageSize = 3;
-		var maxRow = 40;
+		var maxRow = 50;
 
 		function button_create(data_list, startPage) {
 
@@ -196,7 +197,7 @@
 				success : function(data_list) {
 					console.log("성공")
 					console.log(data_list)
-					if (data_list.length < 40) {/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
+					if (data_list.length < 50) {/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
 						list_write(data_list);
 						button_create(data_list, startPage);
 					} else {
@@ -216,7 +217,6 @@
 		function list_write(data_list) {
 			console.log(data_list.length);
 			for (var i = 0; i < data_list.length; i++) {//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
-
 				$('#want_img' + i)
 						.html(
 								'<img class=\"face_img\" src=\"./imgs/face/' + data_list[i].want_img +'.jpg\" alt=\"첨부파일\">');
@@ -225,16 +225,22 @@
 						data_list[i].want_name + ' (' + data_list[i].want_age
 								+ ', ' + data_list[i].want_gen + ')');
 				$('#rep_cate' + i).text(data_list[i].rep_cate);
+				if ((data_list[i].want_open) == '공개') {
+					$('#want_open' + i).attr('class', 'nowantedlist_btn');
+				}
 				$('#faceUpdate' + i).html(
 						"<a href='faceUpdateCon?want_id="
-								+ data_list[i].want_id + "'>수정하기</a>");
+								+ data_list[i].want_id
+								+ "' class=\"a_btn\"><p>수정하기</p></a>");
 			}
 
-			for (var i = data_list.length; i < 40; i++) {//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
+			for (var i = data_list.length; i < 50; i++) {//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
+				$('#list_add' + i).hide();
 				$('#want_img' + i).hide();
 				$('#want_id' + i).hide();
 				$('#want_name' + i).hide();
 				$('#rep_cate' + i).hide();
+				$('#want_open' + i).hide();
 				$('#faceUpdate' + i).hide();
 			}
 
@@ -246,8 +252,8 @@
 		//--->한 페이지 가 가지고 있는 배열안에서 그때그때 해당페이지 블럭을 클릭 한다면 거기 범위에 맞는 데이터를 가져오기 위해 슬라이싱 해줄 필요가 있다
 		function page(currentPage) {
 
-			var startNum = (currentPage - 1) * 40 + 1;
-			var endNum = currentPage * 40;
+			var startNum = (currentPage - 1) * 50 + 1;
+			var endNum = currentPage * 50;
 
 			var start_index = 0;
 			var end_index = 0;
@@ -289,7 +295,8 @@
 
 		//해당 게시물을 출력한다
 		function print_list(data_list) {
-			for (var i = 0; i < 40; i++) {
+			for (var i = 0; i < 50; i++) {
+				$('#list_add' + i).show();
 				$('#want_img' + i).show();
 				$('#want_id' + i).show();
 				$('#want_name' + i).show();
@@ -310,7 +317,8 @@
 				}
 				$('#faceUpdate' + i).html(
 						"<a href='faceUpdateCon?want_id="
-								+ data_list[i].want_id + "' class=\"a_btn\"><p>수정하기</p></a>");
+								+ data_list[i].want_id
+								+ "' class=\"a_btn\"><p>수정하기</p></a>");
 			}
 		}
 
@@ -325,7 +333,5 @@
 
 		/* 공개수배 버튼클릭시 색상유지 end */
 	</script>
-</body>
-
-
+	</ body>
 </html>
