@@ -25,6 +25,7 @@ public class Report {
 	private String want_id;
 	private String rep_pro;
 	private String rep_wri;
+	private String position;
 	private String mon_img;
 	private String mon_char;
 	

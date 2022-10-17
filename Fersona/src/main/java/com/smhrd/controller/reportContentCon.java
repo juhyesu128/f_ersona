@@ -20,12 +20,12 @@ public class reportContentCon extends HttpServlet {
 
 		ReportDAO dao = new ReportDAO();
 		int num = Integer.parseInt(request.getParameter("num"));
-		//System.out.println(num);
+		System.out.println(num);
 
 		Report list = dao.selectOne(num);
-		//System.out.println(list.getMem_id());
-		//System.out.println(list.getMon_id());
-		//System.out.println(list.getMon_img());
+		System.out.println(list.getMem_id());
+		System.out.println(list.getMon_id());
+		System.out.println(list.getMon_img());
 
 		if (list != null) {
 			System.out.println("조회 성공");

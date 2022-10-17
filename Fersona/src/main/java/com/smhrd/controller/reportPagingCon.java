@@ -40,6 +40,7 @@ public class reportPagingCon extends HttpServlet {
 			json.addProperty("want_id", r.getWant_id());
 			json.addProperty("rep_pro", r.getRep_pro());
 			json.addProperty("rep_wri", r.getRep_wri());
+			json.addProperty("position", r.getPosition());
 			
 			jarray.add(json);
 			json = new JsonObject();

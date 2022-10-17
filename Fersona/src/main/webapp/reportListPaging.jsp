@@ -113,13 +113,15 @@
 		</table>
 
 		<!-- 이전 다음 페이지 넘기기 pagination -->
-		 <ul class="pagination pagination-sm justify-content-center" style="margin-top : 30px;">
-			<li id = "link" class="page-item"><a class="page-link" href="#">◀</a></li>
-			<li id = "link" class="page-item active"><a class="page-link" href="#">1</a></li>
+		<ul class="pagination pagination-sm justify-content-center"
+			style="margin-top: 30px;">
+			<li id="link" class="page-item"><a class="page-link" href="#">◀</a></li>
+			<li id="link" class="page-item active"><a class="page-link"
+				href="#">1</a></li>
 			<!-- <li id = "link" class="page-item"><a class="page-link" href="#">2</a></li>
 			<li id = "link" class="page-item"><a class="page-link" href="#">3</a></li>
 			 -->
-			<li id = "link" class="page-item"><a class="page-link" href="#">▶</a></li>
+			<li id="link" class="page-item"><a class="page-link" href="#">▶</a></li>
 		</ul>
 	</div>
 
@@ -296,19 +298,19 @@
 						.html(
 								"<td>"
 										+ (i + 1)
-										+ "</td><td><a href='reportContentCon.jsp?num="
+										+ "</td><td><a href='reportContentCon?num="
 										+ data_list[i].num
 										+ "'>"
 										+ data_list[i].rep_cate
-										+ "</td></a><td><a href='reportContentCon.jsp?num="
+										+ "</td></a><td><a href='reportContentCon?num="
 										+ data_list[i].num
 										+ "'>"
 										+ data_list[i].rep_con
-										+ "</td></a><td><a href='reportContentCon.jsp?num="
+										+ "</td></a><td><a href='reportContentCon?num="
 										+ data_list[i].num
 										+ "'>"
 										+ data_list[i].rep_wri
-										+ "</td></a><td><a href='reportContentCon.jsp?num="
+										+ "</td></a><td><a href='reportContentCon?num="
 										+ data_list[i].num + "'>"
 										+ data_list[i].rep_pro + "</td></a>");
 			}
