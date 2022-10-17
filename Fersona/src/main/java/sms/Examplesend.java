@@ -13,8 +13,8 @@ public class Examplesend {
 	//public String aa() {
 	//public void certifiedPhoneNumber(String user_num, String key) {
 		public void certifiedPhoneNumber(String user_num, String key) {
-		String api_key = "NCS7S9U19BHHPB8D";
-		String api_secret = "X36O02HZL72GD6CBHP5HEUBLBECDUBXH";
+		String api_key = "NCS17A2YB1EP4DOI";
+		String api_secret = "LFE9QFSFKAVOLFLMAVSRQWDAZ6ATSCIA";
 		Message coolsms = new Message(api_key, api_secret);
 
 		// 랜덤숫자6자리 선정
@@ -26,8 +26,9 @@ public class Examplesend {
 
 		// 4 params(to, from, type, text) are mandatory. must be filled
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("to", user_num); // 
-		params.put("from", "01035920568"); // 발신번호 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있음
+		params.put("to", user_num); 
+		// 최훈철 번호로 현재 발송중
+		params.put("from", "01049023489"); // 발신번호 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있음
 		params.put("type", "SMS"); // Message type ( SMS, LMS, MMS, ATA )
 		params.put("text", "[CATCH FACE] 본인확인을 위해 인증번호 [" + key + "]을 입력해주세요."); // 문자내용
 		params.put("app_version", "JAVA SDK v1.2"); // application name and version
