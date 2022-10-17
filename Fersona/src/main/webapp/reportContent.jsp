@@ -75,11 +75,11 @@
 				<tr class="tableHt">
 					<td class="thbg">몽타주 여부</td>
 					<td colspan="3"><img class="imgcss"
-						src="./imgs/<%=list.getMon_img()%>.jpg"
-						<%if (list.getMon_img() ==null){ %>
+						src="./imgs/face/<%=list.getWant_id()%>.jpg"
+						<%if (list.getWant_id() ==null){ %>
 						alt="첨부파일이 없습니다."></td>
 						<%} else{%>
-						alt="<%=list.getMon_img()%>.jpg"> <br><%=list.getMon_char()%></td>
+						alt="<%=list.getWant_id()%>.jpg"> <br><%=list.getMon_char()%></td>
 						<%} %>
 				</tr>
 				<tr class="tableHt">

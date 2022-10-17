@@ -73,12 +73,12 @@ select {
 	align-items: center;
 	width: 20px;
 	margin-right: 4px;
-/*	transform: scale(1);*/
+	transform: scale(1);
 }
-/*
+
 .imgcss:hover {
-	transform: scale(3);
-} */
+	transform: scale(5);
+} 
 
 #reporttext {
 	padding-bottom: 50px;
