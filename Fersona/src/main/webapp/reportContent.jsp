@@ -255,7 +255,7 @@
 
 	<!-- 지도api -->
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=620b44dc9f86c5a784ef0509915b1e7d&libraries=services"></script>
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c272e0c1868af9eec51e997a5a0d6365&libraries=services"></script>
 
 	<script>
 		// 지도 api
